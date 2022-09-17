@@ -1,9 +1,9 @@
-PIVX Core version v5.3.1 is now available from: https://github.com/pivx-project/pivx/releases
+PIVX Core version v5.3.1 is now available from: https://github.com/AdonisNetwork/ADON/releases
 
 This is an important release for stakers and Masternodes: including several tier two synchronization, GUI and build system bug fixes.
 We recommend everyone to update your node/wallet.
 
-Please report bugs using the issue tracker at github: https://github.com/pivx-project/pivx/issues
+Please report bugs using the issue tracker at github: https://github.com/AdonisNetwork/ADON/issues
 
 How to Upgrade
 ==============
@@ -62,4 +62,4 @@ Thanks to everyone who directly contributed to this release:
 - random-zebra
 - W. J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/), the QA team during Testing and the node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/AdonisNetwork-translations/), the QA team during Testing and the node hosts supporting our Testnet.

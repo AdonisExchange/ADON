@@ -1,8 +1,8 @@
-PIVX Core version *3.4.0* is now available from:  <https://github.com/pivx-project/pivx/releases>
+PIVX Core version *3.4.0* is now available from:  <https://github.com/AdonisNetwork/ADON/releases>
 
 This is a new major version release, including various bug fixes and performance improvements.
 
-Please report bugs using the issue tracker at github: <https://github.com/pivx-project/pivx/issues>
+Please report bugs using the issue tracker at github: <https://github.com/AdonisNetwork/ADON/issues>
 
 
 Mandatory Update
@@ -154,4 +154,4 @@ Thanks to everyone who directly contributed to this release:
 - furszy
 - random-zebra
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/AdonisNetwork-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

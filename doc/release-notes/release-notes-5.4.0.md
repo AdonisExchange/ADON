@@ -1,8 +1,8 @@
-PIVX Core version v5.4.0 is now available from: <https://github.com/pivx-project/pivx/releases>
+PIVX Core version v5.4.0 is now available from: <https://github.com/AdonisNetwork/ADON/releases>
 
 This is a new major version release, including a brand-new visual graphical interface for the Governance system, tier two network stability improvements, various bug fixes and performance enhancements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/pivx-project/pivx/issues>
+Please report bugs using the issue tracker at github: <https://github.com/AdonisNetwork/ADON/issues>
 
 How to Upgrade
 ==============
@@ -187,4 +187,4 @@ Thanks to everyone who directly contributed to this release:
 - Suhas Daftuar
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/), and every single person who tested the release candidates.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/AdonisNetwork-translations/), and every single person who tested the release candidates.

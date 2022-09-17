@@ -1834,9 +1834,9 @@ STAKING</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/pivx-project/pivx-project-translations</source>
+https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</source>
         <translation>Отсутствует ваш язык или заметили незавершенный перевод? Вы можете помочь нам стать лучше:
-https://www.transifex.com/pivx-project/pivx-project-translations</translation>
+https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>

@@ -1,13 +1,13 @@
 PIVX Core version 3.0.6 is now available from:
 
-  <https://github.com/pivx-project/pivx/releases>
+  <https://github.com/AdonisNetwork/ADON/releases>
 
 This is a new minor-revision version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/pivx-project/pivx/issues>
+  <https://github.com/AdonisNetwork/ADON/issues>
 
 
 How to Upgrade
@@ -116,4 +116,4 @@ Thanks to everyone who directly contributed to this release:
 - sonic
 - whateverpal
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/AdonisNetwork-translations/).

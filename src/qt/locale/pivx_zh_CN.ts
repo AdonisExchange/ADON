@@ -1690,9 +1690,9 @@ Are you sure?</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/pivx-project/pivx-project-translations</source>
+https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</source>
         <translation>语言缺失或翻译不完整?帮助贡献翻译在这里:
-https://www.transifex.com/pivx-project/pivx-project-translations</translation>
+https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
