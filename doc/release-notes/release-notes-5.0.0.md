@@ -58,7 +58,7 @@ New SHIELD Protocol Implemented!
 
 #### Overview
 Users will be able to protect their financial information by sending and receiving PIVs privately, as well as sending and receiving encrypted messages attached to the shield transactions.
-More visual information about the protocol can be found at https://pivx.org .
+More visual information about the protocol can be found at https://adon.adonis.network .
 
 #### GUI features
 New set of functionalities for the interaction with the SHIELD protocol:

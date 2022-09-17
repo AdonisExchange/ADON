@@ -3,7 +3,7 @@ PIVX Core
 
 Setup
 ---------------------
-[PIVX Core](http://pivx.org/wallet) is the original PIVX client and it builds the backbone of the network. However, it downloads and stores the entire history of PIVX transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[PIVX Core](http://adon.adonis.network/wallet) is the original PIVX client and it builds the backbone of the network. However, it downloads and stores the entire history of PIVX transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -28,10 +28,10 @@ Drag PIVX-Qt to your applications folder, and then run PIVX-Qt.
 
 ### Need Help?
 
-* See the documentation at the [PIVX Wiki](https://github.com/AdonisNetwork/ADON/wiki)
+* See the documentation at the [PIVX Wiki](https://docs.adonis.network/)
 for help and more information.
-* Ask for help on the [PIVX Forum](http://forum.pivx.org/).
-* Join our Discord server [Discord Server](https://discord.pivx.org)
+* Ask for help on the [PIVX Forum](http://forum.adonis.network).
+* Join our Discord server [Discord Server](https://discord.adonis.network)
 
 Building
 ---------------------
@@ -58,8 +58,8 @@ The PIVX repo's [root README](/README.md) contains relevant information on the d
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [PIVX](http://forum.pivx.org/) forum.
-* Join the [PIVX Discord](https://discord.pivx.org).
+* Discuss on the [PIVX](http://forum.adonis.network) forum.
+* Join the [PIVX Discord](https://discord.adonis.network).
 
 ### Miscellaneous
 - [Files](files.md)

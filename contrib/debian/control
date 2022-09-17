@@ -28,7 +28,7 @@ Build-Depends: debhelper,
  libzmq3-dev,
  dh-systemd
 Standards-Version: 3.9.2
-Homepage: http://www.pivx.org
+Homepage: http://adon.adonis.network
 Vcs-Git: git://github.com/AdonisNetwork/ADON.git
 Vcs-Browser: http://github.com/AdonisNetwork/ADON
 

@@ -3803,8 +3803,8 @@ Si è verificato un errore nel tentativo di salvare l'elenco degli indirizzi in 
         <translation>2) Perché i miei PIV non sono spendibili?</translation>
     </message>
     <message>
-        <source>https://PIVX.org/</source>
-        <translation>https://PIVX.org/</translation>
+        <source>https://adon.adonis.network/</source>
+        <translation>https://adon.adonis.network/</translation>
     </message>
     <message>
         <source>1</source>
@@ -3874,7 +3874,7 @@ per vedere e spendere i saldi sulla rete.
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.PIVX.org'&gt;
+                           &lt;a style='color: #b088ff' href='https://discord.adonis.network'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
                            &lt;a style='color: #b088ff' href='https://PIVX.freshdesk.com'&gt;

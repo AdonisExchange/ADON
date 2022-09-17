@@ -342,7 +342,7 @@
                   <enum>Qt::NoFocus</enum>
                  </property>
                  <property name="text">
-                  <string notr="true">https://www.PIVX.org</string>
+                  <string notr="true">https://adon.adonis.network</string>
                  </property>
                 </widget>
                </item>
