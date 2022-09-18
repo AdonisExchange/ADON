@@ -4,19 +4,19 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test asmap config argument for ASN-based IP bucketing.
 
-Verify node behaviour and debug log when launching pivxd in these cases:
+Verify node behaviour and debug log when launching adond in these cases:
 
-1. `pivxd` with no -asmap arg, using /16 prefix for IP bucketing
+1. `adond` with no -asmap arg, using /16 prefix for IP bucketing
 
-2. `pivxd -asmap=<absolute path>`, using the unit test skeleton asmap
+2. `adond -asmap=<absolute path>`, using the unit test skeleton asmap
 
-3. `pivxd -asmap=<relative path>`, using the unit test skeleton asmap
+3. `adond -asmap=<relative path>`, using the unit test skeleton asmap
 
-4. `pivxd -asmap/-asmap=` with no file specified, using the default asmap
+4. `adond -asmap/-asmap=` with no file specified, using the default asmap
 
-5. `pivxd -asmap` with no file specified and a missing default asmap file
+5. `adond -asmap` with no file specified and a missing default asmap file
 
-6. `pivxd -asmap` with an empty (unparsable) default asmap file
+6. `adond -asmap` with an empty (unparsable) default asmap file
 
 The tests are order-independent.
 
@@ -24,7 +24,7 @@ The tests are order-independent.
 import os
 import shutil
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 
 DEFAULT_ASMAP_FILENAME = 'ip_asn.map' # defined in src/init.cpp
 ASMAP = '../../src/test/data/asmap.raw' # path to unit test skeleton asmap
@@ -34,18 +34,18 @@ def expected_messages(filename):
     return ['Opened asmap file "{}" (59 bytes) from disk'.format(filename),
             'Using asmap version {} for IP bucketing'.format(VERSION)]
 
-class AsmapTest(PivxTestFramework):
+class AsmapTest(AdonTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 
     def test_without_asmap_arg(self):
-        self.log.info('Test pivxd with no -asmap arg passed')
+        self.log.info('Test adond with no -asmap arg passed')
         self.stop_node(0)
         with self.node.assert_debug_log(['Using /16 prefix for IP bucketing']):
             self.start_node(0)
 
     def test_asmap_with_absolute_path(self):
-        self.log.info('Test pivxd -asmap=<absolute path>')
+        self.log.info('Test adond -asmap=<absolute path>')
         self.stop_node(0)
         filename = os.path.join(self.datadir, 'my-map-file.map')
         shutil.copyfile(self.asmap_raw, filename)
@@ -54,7 +54,7 @@ class AsmapTest(PivxTestFramework):
         os.remove(filename)
 
     def test_asmap_with_relative_path(self):
-        self.log.info('Test pivxd -asmap=<relative path>')
+        self.log.info('Test adond -asmap=<relative path>')
         self.stop_node(0)
         name = 'ASN_map'
         filename = os.path.join(self.datadir, name)
@@ -66,20 +66,20 @@ class AsmapTest(PivxTestFramework):
     def test_default_asmap(self):
         shutil.copyfile(self.asmap_raw, self.default_asmap)
         for arg in ['-asmap', '-asmap=']:
-            self.log.info('Test pivxd {} (using default map file)'.format(arg))
+            self.log.info('Test adond {} (using default map file)'.format(arg))
             self.stop_node(0)
             with self.node.assert_debug_log(expected_messages(self.default_asmap)):
                 self.start_node(0, [arg])
         os.remove(self.default_asmap)
 
     def test_default_asmap_with_missing_file(self):
-        self.log.info('Test pivxd -asmap with missing default map file')
+        self.log.info('Test adond -asmap with missing default map file')
         self.stop_node(0)
         msg = "Error: Could not find asmap file \"{}\"".format(self.default_asmap)
         self.nodes[0].assert_start_raises_init_error(extra_args=['-asmap'], expected_msg=msg)
 
     def test_empty_asmap(self):
-        self.log.info('Test pivxd -asmap with empty map file')
+        self.log.info('Test adond -asmap with empty map file')
         self.stop_node(0)
         with open(self.default_asmap, "w", encoding="utf-8") as f:
             f.write("")

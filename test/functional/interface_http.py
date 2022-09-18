@@ -7,11 +7,11 @@
 import http.client
 import urllib.parse
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import assert_equal, str_to_b64str
 
 
-class HTTPBasicsTest (PivxTestFramework):
+class HTTPBasicsTest (AdonTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
 
@@ -89,7 +89,7 @@ class HTTPBasicsTest (PivxTestFramework):
         conn.request('POST', '/', '{"method": "getbestblockhash"}', headers)
         out1 = conn.getresponse().read()
         assert(b'"error":null' in out1)
-        assert(conn.sock is not None) #connection must be closed because pivxd should use keep-alive by default
+        assert(conn.sock is not None) #connection must be closed because adond should use keep-alive by default
 
         # Check excessive request size
         conn = http.client.HTTPConnection(urlNode2.hostname, urlNode2.port)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020 The PIVX developers
+# Copyright (c) 2020 The ADON developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php.
 """
@@ -15,7 +15,7 @@ Test checking:
 
 import time
 
-from test_framework.test_framework import PivxTier2TestFramework
+from test_framework.test_framework import AdonTier2TestFramework
 from test_framework.util import (
     connect_nodes_clique,
     disconnect_nodes,
@@ -23,7 +23,7 @@ from test_framework.util import (
 )
 
 
-class MasternodeActivationTest(PivxTier2TestFramework):
+class MasternodeActivationTest(AdonTier2TestFramework):
 
     def disconnect_remotes(self):
         for i in [self.remoteOnePos, self.remoteTwoPos]:

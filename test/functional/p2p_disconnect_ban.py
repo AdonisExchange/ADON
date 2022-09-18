@@ -6,7 +6,7 @@
 
 import time
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     assert_equal,
     connect_nodes,
@@ -15,7 +15,7 @@ from test_framework.util import (
 )
 
 
-class DisconnectBanTest(PivxTestFramework):
+class DisconnectBanTest(AdonTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 

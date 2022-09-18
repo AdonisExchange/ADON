@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=ADON Core
+Comment=ADON P2P Cryptocurrency
+Exec=adon-qt %u
+Terminal=false
+Type=Application
+Icon=adon128
+MimeType=x-scheme-handler/adon;
+Categories=Office;Finance;
+StartupWMClass=Adon-qt
+Name[en_US]=adon-qt.desktop

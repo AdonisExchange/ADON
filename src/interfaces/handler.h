@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2020 The Bitcoin Core developers
-// Copyright (c) 2020 The PIVX Core developers
+// Copyright (c) 2020 The ADON Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_INTERFACES_HANDLER_H
-#define PIVX_INTERFACES_HANDLER_H
+#ifndef ADON_INTERFACES_HANDLER_H
+#define ADON_INTERFACES_HANDLER_H
 
 #include <memory>
 
@@ -33,4 +33,4 @@ std::unique_ptr<Handler> MakeHandler(boost::signals2::connection connection);
 
 } // namespace interfaces
 
-#endif // PIVX_INTERFACES_HANDLER_H
+#endif // ADON_INTERFACES_HANDLER_H

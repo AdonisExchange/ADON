@@ -28,10 +28,10 @@ def assert_fee_amount(fee, tx_size, fee_per_kB):
     """Assert the fee was in range"""
     target_fee = round(tx_size * fee_per_kB / 1000, 8)
     if fee < target_fee:
-        raise AssertionError("Fee of %s PIV too low! (Should be %s PIV)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s ADON too low! (Should be %s ADON)" % (str(fee), str(target_fee)))
     # allow the wallet's estimation to be at most 2 bytes off
     if fee > (tx_size + 20) * fee_per_kB / 1000:
-        raise AssertionError("Fee of %s PIV too high! (Should be %s PIV)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s ADON too high! (Should be %s ADON)" % (str(fee), str(target_fee)))
 
 def assert_equal(thing1, thing2, *args):
     if thing1 != thing2 or any(thing1 != arg for arg in args):
@@ -305,7 +305,7 @@ def initialize_datadir(dirname, n):
     datadir = get_datadir_path(dirname, n)
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
-    with open(os.path.join(datadir, "pivx.conf"), 'w', encoding='utf8') as f:
+    with open(os.path.join(datadir, "adon.conf"), 'w', encoding='utf8') as f:
         f.write("regtest=1\n")
         f.write("[regtest]\n")
         f.write("port=" + str(p2p_port(n)) + "\n")
@@ -324,15 +324,15 @@ def get_datadir_path(dirname, n):
 
 def append_config(dirname, n, options):
     datadir = get_datadir_path(dirname, n)
-    with open(os.path.join(datadir, "pivx.conf"), 'a', encoding='utf8') as f:
+    with open(os.path.join(datadir, "adon.conf"), 'a', encoding='utf8') as f:
         for option in options:
             f.write(option + "\n")
 
 def get_auth_cookie(datadir):
     user = None
     password = None
-    if os.path.isfile(os.path.join(datadir, "pivx.conf")):
-        with open(os.path.join(datadir, "pivx.conf"), 'r', encoding='utf8') as f:
+    if os.path.isfile(os.path.join(datadir, "adon.conf")):
+        with open(os.path.join(datadir, "adon.conf"), 'r', encoding='utf8') as f:
             for line in f:
                 if line.startswith("rpcuser="):
                     assert user is None  # Ensure that there is only one rpcuser line
@@ -563,7 +563,7 @@ def find_vout_for_address(node, txid, addr):
             return i
     raise RuntimeError("Vout not found for address: txid=%s, addr=%s" % (txid, addr))
 
-# PIVX specific utils
+# ADON specific utils
 DEFAULT_FEE = 0.01
 SPORK_ACTIVATION_TIME = 1563253447
 SPORK_DEACTIVATION_TIME = 4070908800

@@ -1,4 +1,4 @@
-PIVX Core version *4.2.0* is now available from:  <https://github.com/AdonisNetwork/ADON/releases>
+ADON Core version *4.2.0* is now available from:  <https://github.com/AdonisNetwork/ADON/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
@@ -13,19 +13,19 @@ This version is an optional, but recommended, update for all users and services.
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/PIVX-Qt (on Mac) or pivxd/pivx-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/ADON-Qt (on Mac) or adond/adon-qt (on Linux).
 
 
 Compatibility
 ==============
 
-PIVX Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.10+, and Windows 7 and later.
+ADON Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.10+, and Windows 7 and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support), No attempt is made to prevent installing or running the software on Windows XP, you can still do so at your own risk but be aware that there are known instabilities and issues. Please do not report issues about Windows XP to the issue tracker.
 
-Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). PIVX Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
+Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). ADON Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
 
-PIVX Core should also work on most other Unix-like systems but is not frequently tested on them.
+ADON Core should also work on most other Unix-like systems but is not frequently tested on them.
 
 
 Notable Changes
@@ -33,25 +33,25 @@ Notable Changes
 
 ### Removed zerocoin GUI
 
-Spending zPIV and getting zPIV balance information is no longer available in the graphical interface ([#1549](https://github.com/AdonisNetwork/ADON/pull/1549)). The feature remains accessible through the RPC interface: `getzerocoinbalance`, `listmintedzerocoins`, `listzerocoinamounts`, `spendzerocoin`, `spendzerocoinmints`.
+Spending zADON and getting zADON balance information is no longer available in the graphical interface ([#1549](https://github.com/AdonisNetwork/ADON/pull/1549)). The feature remains accessible through the RPC interface: `getzerocoinbalance`, `listmintedzerocoins`, `listzerocoinamounts`, `spendzerocoin`, `spendzerocoinmints`.
 
 
 ### Memory pool limiting
 
-Previous versions of PIVX Core had their mempool limited by checking a transaction's fees against the node's minimum relay fee. There was no upper bound on the size of the mempool and attackers could send a large number of transactions paying just slighly more than the default minimum relay fee to crash nodes with relatively low RAM.
+Previous versions of ADON Core had their mempool limited by checking a transaction's fees against the node's minimum relay fee. There was no upper bound on the size of the mempool and attackers could send a large number of transactions paying just slighly more than the default minimum relay fee to crash nodes with relatively low RAM.
 
-PIVX Core 4.2.0 will have a strict maximum size on the mempool. The default value is 300 MB and can be configured with the `-maxmempool` parameter. Whenever a transaction would cause the mempool to exceed its maximum size, the transaction that (along with in-mempool descendants) has the lowest total feerate (as a package) will be evicted and the node's effective minimum relay feerate will be increased to match this feerate plus the initial minimum relay feerate. The initial minimum relay feerate is set to 1000 satoshis per kB.
+ADON Core 4.2.0 will have a strict maximum size on the mempool. The default value is 300 MB and can be configured with the `-maxmempool` parameter. Whenever a transaction would cause the mempool to exceed its maximum size, the transaction that (along with in-mempool descendants) has the lowest total feerate (as a package) will be evicted and the node's effective minimum relay feerate will be increased to match this feerate plus the initial minimum relay feerate. The initial minimum relay feerate is set to 1000 satoshis per kB.
 
-PIVX Core 4.2.0 also introduces new default policy limits on the length and size of unconfirmed transaction chains that are allowed in the mempool (generally limiting the length of unconfirmed chains to 25 transactions, with a total size of 101 KB). These limits can be overridden using command line arguments ([#1645](https://github.com/AdonisNetwork/ADON/pull/1645), [#1647](https://github.com/AdonisNetwork/ADON/pull/1647)).
+ADON Core 4.2.0 also introduces new default policy limits on the length and size of unconfirmed transaction chains that are allowed in the mempool (generally limiting the length of unconfirmed chains to 25 transactions, with a total size of 101 KB). These limits can be overridden using command line arguments ([#1645](https://github.com/AdonisNetwork/ADON/pull/1645), [#1647](https://github.com/AdonisNetwork/ADON/pull/1647)).
 
 ### Benchmarking Framework
 
-PIVX Core 4.2.0 backports  the internal benchmarking framework from Bitcoin Core, which can be used to benchmark cryptographic algorithms (e.g. SHA1, SHA256, SHA512, RIPEMD160, Poly1305, ChaCha20), Base58 encoding and decoding and thread queue. More tests are needed for script validation, coin selection and coins database, cuckoo cache, p2p throughtput ([#1650](https://github.com/AdonisNetwork/ADON/pull/1650)).
+ADON Core 4.2.0 backports  the internal benchmarking framework from Bitcoin Core, which can be used to benchmark cryptographic algorithms (e.g. SHA1, SHA256, SHA512, RIPEMD160, Poly1305, ChaCha20), Base58 encoding and decoding and thread queue. More tests are needed for script validation, coin selection and coins database, cuckoo cache, p2p throughtput ([#1650](https://github.com/AdonisNetwork/ADON/pull/1650)).
 
-The binary file is compiled with pivx-core, unless configured with `--disable-bench`.<br>
-After compiling pivx-core, the benchmarks can be run with:
+The binary file is compiled with adon-core, unless configured with `--disable-bench`.<br>
+After compiling adon-core, the benchmarks can be run with:
 ```
-src/bench/bench_pivx
+src/bench/bench_adon
 ```
 The output will be similar to:
 ```
@@ -64,7 +64,7 @@ Base58CheckEncode,131072,7697,8065,7785,20015,20971,20242
 
 A new 'label' API has been introduced for the wallet. This is intended as a
 replacement for the deprecated 'account' API. The 'account' can continue to
-be used in v4.2 by starting pivxd with the '-deprecatedrpc=accounts'
+be used in v4.2 by starting adond with the '-deprecatedrpc=accounts'
 argument, and will be fully removed in v5.0.
 
 The label RPC methods mirror the account functionality, with the following functional differences:
@@ -111,7 +111,7 @@ Functional Changes
 
 ### Stake-Split threshold
 
-If the stake split is active (threshold > 0), then stake split threshold value must be greater than a minimum, set by default at 100 PIV. The minimum value can be changed using the `-minstakesplit` startup flag ([#1586](https://github.com/AdonisNetwork/ADON/pull/1586)). A value `0` is still allowed, regardless of the minimum set, and, as before, can be used to disable the stake splitting functionality.
+If the stake split is active (threshold > 0), then stake split threshold value must be greater than a minimum, set by default at 100 ADON. The minimum value can be changed using the `-minstakesplit` startup flag ([#1586](https://github.com/AdonisNetwork/ADON/pull/1586)). A value `0` is still allowed, regardless of the minimum set, and, as before, can be used to disable the stake splitting functionality.
 
 ### Changed command-line options
 
@@ -132,7 +132,7 @@ In addition to the afore mentioned 'label' and 'account' API changes, other RPC 
 
 - The `asm` property of each scriptSig now contains the decoded signature hash type for each signature that provides a valid defined hash type ([#1633](https://github.com/AdonisNetwork/ADON/pull/1633)).<br>
 The following items contain assembly representations of scriptSig signatures
-and are affected by this change: RPC `getrawtransaction`, RPC `decoderawtransaction`, REST `/rest/tx/` (JSON format), REST `/rest/block/` (JSON format when including extended tx details), `pivx-tx -json`
+and are affected by this change: RPC `getrawtransaction`, RPC `decoderawtransaction`, REST `/rest/tx/` (JSON format), REST `/rest/block/` (JSON format when including extended tx details), `adon-tx -json`
 
 ### Modified input/output for existing commands
 
@@ -184,12 +184,12 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #1697 `13576cfe14` [BUG] Fix mempool entry priority (furszy)
  - #1707 `6bc917e859` RPC & Mempool back ports. (furszy)
  - #1728 `1c472ebae8` IsInitialBlockDownload: usually avoid locking (furszy)
- - #1729 `76ea490ac1` [Core] Add checkpoints for PIVX v4.1.1 enforcement (random-zebra)
+ - #1729 `76ea490ac1` [Core] Add checkpoints for ADON v4.1.1 enforcement (random-zebra)
  - #1733 `e4ae10db31` Move zerocoin validation to its own legacy file. (furszy)
  - #1747 `6f90e8be13` NU custom activation height startup arg. (furszy)
 
 ### Build System
- - #1681 `131ec069fd` [Build] Set complete cpp/cxx flags for bench_pivx binary (Fuzzbawls)
+ - #1681 `131ec069fd` [Build] Set complete cpp/cxx flags for bench_adon binary (Fuzzbawls)
  - #1684 `69fa8dce5e` [Travis] Bump macOS CMake target image (Fuzzbawls)
  - #1710 `ed63a331a3` [Depends] Update dependency fallback URL (Fuzzbawls)
 
@@ -207,8 +207,8 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #1059 `39a0fa6e04` [UI] Improve staking chart workflow (Akshay)
  - #1287 `e7dd0947c0` [GUI] Load persisted transaction filter during start (Mrs-X)
  - #1516 `93df7ce6ec` [GUI] MacOS fix open files with no default app. (furszy)
- - #1548 `176d3ae558` [Cleanup][GUI] Remove zPIV faqs (random-zebra)
- - #1549 `47bf23aa14` [Cleanup][GUI] Nuke zPIV from the GUI (random-zebra)
+ - #1548 `176d3ae558` [Cleanup][GUI] Remove zADON faqs (random-zebra)
+ - #1549 `47bf23aa14` [Cleanup][GUI] Nuke zADON from the GUI (random-zebra)
  - #1598 `f66f72656d` [GUI] Split "Delegators" address type in the table model (furszy)
  - #1601 `78a2923184` [GUI] Tor state missing translation (furszy)
  - #1604 `8ec6bbe737` [Refactor][GUI] Set static texts in .ui files + add missing tr() (random-zebra)
@@ -242,7 +242,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
 
 ### RPC/REST
  - #1640 `0b84a5025d` [P2P][RPC] Rework addnode behaviour (Pieter Wuille)
- - #1660 `10876c6c80` [RPC] Change btc to PIV in help text (PeterL73)
+ - #1660 `10876c6c80` [RPC] Change btc to ADON in help text (PeterL73)
  - #1663 `0724bbbad2` [Wallet][RPC] FundTransaction - fundrawtransaction (random-zebra)
  - #1702 `7a849ca06a` [RPC] Table registration update and wallet table decoupled. (furszy)
  - #1731 `fe845a83d2` [RPC][Wallet] Deprecate internal account system (Fuzzbawls)

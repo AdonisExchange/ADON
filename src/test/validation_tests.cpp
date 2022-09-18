@@ -1,8 +1,8 @@
-// Copyright (c) 2020-2021 The PIVX developers
+// Copyright (c) 2020-2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "test/test_pivx.h"
+#include "test/test_adon.h"
 #include "blockassembler.h"
 #include "primitives/transaction.h"
 #include "sapling/sapling_validation.h"

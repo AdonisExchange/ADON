@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The PIVX Core developers
+# Copyright (c) 2021 The ADON Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test DKG and PoSe ban of missing nodes"""
@@ -7,14 +7,14 @@
 import time
 
 from test_framework.authproxy import JSONRPCException
-from test_framework.test_framework import PivxDMNTestFramework, ExpectedDKGMessages
+from test_framework.test_framework import AdonDMNTestFramework, ExpectedDKGMessages
 from test_framework.util import (
     assert_equal,
     wait_until,
 )
 
 
-class DkgPoseTest(PivxDMNTestFramework):
+class DkgPoseTest(AdonDMNTestFramework):
 
     def set_test_params(self):
         self.set_base_test_params()

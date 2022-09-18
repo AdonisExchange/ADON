@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2019-2020 The PIVX developers
+# Copyright (c) 2019-2020 The ADON developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
@@ -48,7 +48,7 @@ import time
 
 from test_framework.authproxy import JSONRPCException
 from test_framework.messages import COutPoint
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     assert_equal,
     bytes_to_hex_str,
@@ -56,7 +56,7 @@ from test_framework.util import (
 )
 
 
-class FakeStakeTest(PivxTestFramework):
+class FakeStakeTest(AdonTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         # whitelist all peers to speed up tx relay / mempool sync

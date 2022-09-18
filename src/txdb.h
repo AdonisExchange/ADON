@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2016-2020 The PIVX developers
+// Copyright (c) 2016-2020 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -158,7 +158,7 @@ private:
     void operator=(const CZerocoinDB&);
 
 public:
-    /** Write zPIV spends to the zerocoinDB in a batch
+    /** Write zADON spends to the zerocoinDB in a batch
      * Pair of: CBigNum -> coinSerialNumber and uint256 -> txHash.
      */
     bool WriteCoinSpendBatch(const std::vector<std::pair<CBigNum, uint256> >& spendInfo);

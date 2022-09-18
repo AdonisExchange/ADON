@@ -2,13 +2,13 @@
 # Copyright (c) 2015-2017 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test pivxd with different proxy configuration.
+"""Test adond with different proxy configuration.
 
 Test plan:
-- Start pivxd's with different proxy configurations
+- Start adond's with different proxy configurations
 - Use addnode to initiate connections
 - Verify that proxies are connected to, and the right connection command is given
-- Proxy configurations to test on pivxd side:
+- Proxy configurations to test on adond side:
     - `-proxy` (proxy everything)
     - `-onion` (proxy just onions)
     - `-proxyrandomize` Circuit randomization
@@ -18,8 +18,8 @@ Test plan:
     - proxy on IPv6
 
 - Create various proxies (as threads)
-- Create pivxds that connect to them
-- Manipulate the pivxds using addnode (onetry) an observe effects
+- Create adonds that connect to them
+- Manipulate the adonds using addnode (onetry) an observe effects
 
 addnode connect to IPv4
 addnode connect to IPv6
@@ -34,7 +34,7 @@ import socket
 
 from test_framework.netutil import test_ipv6_local
 from test_framework.socks5 import Socks5Configuration, Socks5Command, Socks5Server, AddressType
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     PORT_MIN,
     PORT_RANGE,
@@ -54,7 +54,7 @@ NET_ONION = "onion"
 NETWORKS = frozenset({NET_IPV4, NET_IPV6, NET_ONION})
 
 
-class ProxyTest(PivxTestFramework):
+class ProxyTest(AdonTestFramework):
     def set_test_params(self):
         self.num_nodes = 4
 
@@ -108,7 +108,7 @@ class ProxyTest(PivxTestFramework):
         node.addnode("15.61.23.23:1234", "onetry")
         cmd = proxies[0].queue.get()
         assert(isinstance(cmd, Socks5Command))
-        # Note: pivxd's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
+        # Note: adond's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
         assert_equal(cmd.atyp, AddressType.DOMAINNAME)
         assert_equal(cmd.addr, b"15.61.23.23")
         assert_equal(cmd.port, 1234)
@@ -122,7 +122,7 @@ class ProxyTest(PivxTestFramework):
             node.addnode("[1233:3432:2434:2343:3234:2345:6546:4534]:5443", "onetry")
             cmd = proxies[1].queue.get()
             assert(isinstance(cmd, Socks5Command))
-            # Note: pivxd's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
+            # Note: adond's SOCKS5 implementation only sends atyp DOMAINNAME, even if connecting directly to IPv4/IPv6
             assert_equal(cmd.atyp, AddressType.DOMAINNAME)
             assert_equal(cmd.addr, b"1233:3432:2434:2343:3234:2345:6546:4534")
             assert_equal(cmd.port, 5443)

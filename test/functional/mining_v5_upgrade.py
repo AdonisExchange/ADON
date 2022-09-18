@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012-2021 The PIVX developers
+# Copyright (c) 2012-2021 The ADON developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Simple test checking chain movement after v5 enforcement."""
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import assert_equal
 
 
-class MiningV5UpgradeTest(PivxTestFramework):
+class MiningV5UpgradeTest(AdonTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 1

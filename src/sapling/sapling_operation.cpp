@@ -1,4 +1,4 @@
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
@@ -448,7 +448,7 @@ OperationResult SaplingOperation::loadUnspentNotes(TxValues& txValues, uint256& 
             sspkm->GetFilteredNotes(_shieldedInputs, fromAddress.fromSapAddr, 0);
             return errorOut(_shieldedInputs.empty() ?
                     "Insufficient funds, no available notes to spend" :
-                    "Insufficient funds, shielded PIV need at least 5 confirmations");
+                    "Insufficient funds, shielded ADON need at least 5 confirmations");
         }
     }
 

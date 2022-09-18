@@ -37,7 +37,7 @@ MAX_INV_SZ = 50000
 MAX_BLOCK_BASE_SIZE = 2000000
 CURRENT_BLK_VERSION = 11
 
-COIN = 100000000 # 1 PIV in satoshis
+COIN = 100000000 # 1 ADON in satoshis
 
 NODE_NETWORK = (1 << 0)
 # NODE_GETUTXO = (1 << 1)
@@ -193,7 +193,7 @@ def FromHex(obj, hex_string):
 def ToHex(obj):
     return bytes_to_hex_str(obj.serialize())
 
-# Objects that map to pivxd objects, which can be serialized/deserialized
+# Objects that map to adond objects, which can be serialized/deserialized
 
 class CAddress:
     __slots__ = ("net", "ip", "nServices", "port", "time")
@@ -578,7 +578,7 @@ class CBlockHeader:
         self.calc_sha256()
         return self.sha256
 
-    # PIVX
+    # ADON
     def solve_stake(self, stakeInputs, prevModifier):
         target0 = uint256_from_compact(self.nBits)
         loop = True
@@ -1368,7 +1368,7 @@ class msg_headers:
         self.headers = headers if headers is not None else []
 
     def deserialize(self, f):
-        # comment in pivxd indicates these should be deserialized as blocks
+        # comment in adond indicates these should be deserialized as blocks
         blocks = deser_vector(f, CBlock)
         for x in blocks:
             self.headers.append(CBlockHeader(x))
@@ -1477,7 +1477,7 @@ class msg_witness_blocktxn(msg_blocktxn):
         return r
 
 
-# PIVX Classes
+# ADON Classes
 class Masternode(object):
     def __init__(self, idx, owner_addr, operator_pk, voting_addr, ipport, payout_addr, operator_sk):
         self.idx = idx

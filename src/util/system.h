@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2021 The PIVX developers
+// Copyright (c) 2015-2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_SYSTEM_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/adon-config.h"
 #endif
 
 #include "fs.h"
@@ -47,12 +47,12 @@ public:
     boost::signals2::signal<std::string (const char* psz)> Translate;
 };
 
-extern const char * const PIVX_CONF_FILENAME;
-extern const char * const PIVX_PID_FILENAME;
-extern const char * const PIVX_MASTERNODE_CONF_FILENAME;
+extern const char * const ADON_CONF_FILENAME;
+extern const char * const ADON_PID_FILENAME;
+extern const char * const ADON_MASTERNODE_CONF_FILENAME;
 extern const char * const DEFAULT_DEBUGLOGFILE;
 
-//PIVX only features
+//ADON only features
 
 extern std::atomic<bool> fMasterNode;
 
@@ -269,7 +269,7 @@ void SetThreadPriority(int nPriority);
 template <typename Callable>
 void TraceThread(const std::string name, Callable func)
 {
-    std::string s = "pivx-" + name;
+    std::string s = "adon-" + name;
     util::ThreadRename(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

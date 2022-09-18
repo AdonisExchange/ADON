@@ -1,10 +1,10 @@
 // Copyright (c) 2019-2020 The Dash Core developers
-// Copyright (c) 2021 The PIVX Core developers
+// Copyright (c) 2021 The ADON Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_EVO_MNAUTH_H
-#define PIVX_EVO_MNAUTH_H
+#ifndef ADON_EVO_MNAUTH_H
+#define ADON_EVO_MNAUTH_H
 
 #include "bls/bls_wrapper.h"
 #include "serialize.h"
@@ -48,4 +48,4 @@ public:
 };
 
 
-#endif // PIVX_EVO_MNAUTH_H
+#endif // ADON_EVO_MNAUTH_H

@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2013 The PPCoin developers
 // Copyright (c) 2013-2014 The NovaCoin Developers
 // Copyright (c) 2014-2018 The BlackCoin Developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The ADON developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,7 +15,7 @@
 #include "util/system.h"
 #include "utilmoneystr.h"
 #include "validation.h"
-#include "zpiv/zpos.h"
+#include "zadon/zpos.h"
 
 /**
  * CStakeKernel Constructor
@@ -97,8 +97,8 @@ static bool LoadStakeInput(const CBlock& block, std::unique_ptr<CStakeInput>& st
     // Construct the stakeinput object
     const CTxIn& txin = block.vtx[1]->vin[0];
     stake = txin.IsZerocoinSpend() ?
-            std::unique_ptr<CStakeInput>(CLegacyZPivStake::NewZPivStake(txin, nHeight)) :
-            std::unique_ptr<CStakeInput>(CPivStake::NewPivStake(txin, nHeight, block.nTime));
+            std::unique_ptr<CStakeInput>(CLegacyZAdonStake::NewZAdonStake(txin, nHeight)) :
+            std::unique_ptr<CStakeInput>(CAdonStake::NewAdonStake(txin, nHeight, block.nTime));
 
     return stake != nullptr;
 }
@@ -154,7 +154,7 @@ bool CheckProofOfStake(const CBlock& block, std::string& strError, const CBlockI
     }
 
     // zPoS disabled (ContextCheck) before blocks V7, and the tx input signature is in CoinSpend
-    if (stakeInput->IsZPIV()) return true;
+    if (stakeInput->IsZADON()) return true;
 
     // Verify tx input signature
     CTxOut stakePrevout;

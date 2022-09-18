@@ -13,3 +13,4 @@ MimeType=x-scheme-handler/piv;
 Categories=X-Office;X-Finance;
 Keywords=internet;pivx;zpiv;core;wallet;daemon;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
 Version=1.0
+Name[en_US]=ADON Core Daemon SNAP

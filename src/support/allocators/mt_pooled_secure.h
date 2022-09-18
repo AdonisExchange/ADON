@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2021 The Dash Core developers
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_SUPPORT_ALLOCATORS_MT_POOLED_SECURE_H
-#define PIVX_SUPPORT_ALLOCATORS_MT_POOLED_SECURE_H
+#ifndef ADON_SUPPORT_ALLOCATORS_MT_POOLED_SECURE_H
+#define ADON_SUPPORT_ALLOCATORS_MT_POOLED_SECURE_H
 
 #include "pooled_secure.h"
 
@@ -82,4 +82,4 @@ private:
     std::vector<std::unique_ptr<internal_pool>> pools;
 };
 
-#endif // PIVX_SUPPORT_ALLOCATORS_MT_POOLED_SECURE_H
+#endif // ADON_SUPPORT_ALLOCATORS_MT_POOLED_SECURE_H

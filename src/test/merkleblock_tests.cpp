@@ -4,7 +4,7 @@
 
 #include "merkleblock.h"
 #include "uint256.h"
-#include "test/test_pivx.h"
+#include "test/test_adon.h"
 #include "test/util/blocksutil.h"
 
 #include <boost/test/unit_test.hpp>

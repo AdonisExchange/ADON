@@ -2,21 +2,21 @@
 # Copyright (c) 2019 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php.
-"""Test pivxd aborts if can't disconnect a block.
+"""Test adond aborts if can't disconnect a block.
 
 - Start a single node and generate 3 blocks.
 - Delete the undo data.
 - Mine a fork that requires disconnecting the tip.
-- Verify that pivxd AbortNode's.
+- Verify that adond AbortNode's.
 """
 
 import os
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import wait_until, get_datadir_path, connect_nodes
 
 
-class AbortNodeTest(PivxTestFramework):
+class AbortNodeTest(AdonTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True

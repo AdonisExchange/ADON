@@ -1,9 +1,9 @@
 // Copyright (c) 2018-2021 The Dash Core developers
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "test/test_pivx.h"
+#include "test/test_adon.h"
 
 #include "blockassembler.h"
 #include "consensus/merkle.h"
@@ -29,7 +29,7 @@
 
 typedef std::map<COutPoint, std::pair<int, CAmount>> SimpleUTXOMap;
 
-// static 0.1 PIV fee used for the special txes in these tests
+// static 0.1 ADON fee used for the special txes in these tests
 static const CAmount fee = 10000000;
 
 static SimpleUTXOMap BuildSimpleUtxoMap(const std::vector<CTransaction>& txs)

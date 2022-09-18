@@ -1,10 +1,10 @@
 // Copyright (c) 2014-2021 The Dash Core developers
-// Copyright (c) 2021 The PIVX Core developers
+// Copyright (c) 2021 The ADON Core developers
 // Distributed under the X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_MASTERNODE_META_MANAGER_H
-#define PIVX_MASTERNODE_META_MANAGER_H
+#ifndef ADON_MASTERNODE_META_MANAGER_H
+#define ADON_MASTERNODE_META_MANAGER_H
 
 #include "serialize.h"
 #include "sync.h"
@@ -92,4 +92,4 @@ public:
 
 extern CMasternodeMetaMan g_mmetaman;
 
-#endif //PIVX_MASTERNODE_META_MANAGER_H
+#endif //ADON_MASTERNODE_META_MANAGER_H

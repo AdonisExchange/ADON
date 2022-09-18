@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_BLOCKSUTIL_H
-#define PIVX_BLOCKSUTIL_H
+#ifndef ADON_BLOCKSUTIL_H
+#define ADON_BLOCKSUTIL_H
 
 #include "primitives/block.h"
 #include <memory>
@@ -15,4 +15,4 @@ void ProcessBlockAndCheckRejectionReason(std::shared_ptr<CBlock>& pblock,
 
 CBlock getBlock13b8a();
 
-#endif //PIVX_BLOCKSUTIL_H
+#endif //ADON_BLOCKSUTIL_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The PIVX developers
+// Copyright (c) 2022 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_BLS_KEY_IO_H
-#define PIVX_BLS_KEY_IO_H
+#ifndef ADON_BLS_KEY_IO_H
+#define ADON_BLS_KEY_IO_H
 
 #include "optional.h"
 
@@ -21,4 +21,4 @@ namespace bls {
 
 } // end bls namespace
 
-#endif //PIVX_BLS_KEY_IO_H
+#endif //ADON_BLS_KEY_IO_H

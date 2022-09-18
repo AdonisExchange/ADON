@@ -1,10 +1,10 @@
 // Copyright (c) 2014-2020 The Dash Core developers
-// Copyright (c) 2022 The PIVX Core developers
+// Copyright (c) 2022 The ADON Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_NETFULFILLEDMAN_H
-#define PIVX_NETFULFILLEDMAN_H
+#ifndef ADON_NETFULFILLEDMAN_H
+#define ADON_NETFULFILLEDMAN_H
 
 #include "bloom.h"
 #include "serialize.h"
@@ -65,4 +65,4 @@ public:
 
 extern CNetFulfilledRequestManager g_netfulfilledman;
 
-#endif // PIVX_NETFULFILLEDMAN_H
+#endif // ADON_NETFULFILLEDMAN_H

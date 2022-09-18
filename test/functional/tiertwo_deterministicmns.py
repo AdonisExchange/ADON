@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The PIVX Core developers
+# Copyright (c) 2021 The ADON Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test deterministic masternodes"""
@@ -10,7 +10,7 @@ import time
 
 from test_framework.blocktools import create_block, create_coinbase
 from test_framework.messages import CTxOut, COIN
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     assert_greater_than,
     assert_equal,
@@ -24,7 +24,7 @@ from test_framework.util import (
 )
 
 
-class DIP3Test(PivxTestFramework):
+class DIP3Test(AdonTestFramework):
 
     def set_test_params(self):
         # 1 miner, 1 controller, 6 remote mns
@@ -262,7 +262,7 @@ class DIP3Test(PivxTestFramework):
         # Test payments.
         # Mine 12 blocks and check that each masternode has been paid exactly twice.
         # Save last paid masternode. Check that it's the last paid also after the 12 blocks.
-        # Note: dmn2 sends (2 * 0.3 PIV) to the operator, and (2 * 2.7 PIV) to the owner
+        # Note: dmn2 sends (2 * 0.3 ADON) to the operator, and (2 * 2.7 ADON) to the owner
         self.log.info("Testing masternode payments...")
         last_paid_mn = self.get_last_paid_mn()
         starting_balances = {"operator": self.get_addr_balance(self.nodes[dmn2c.idx], op_rew["address"])}
@@ -302,7 +302,7 @@ class DIP3Test(PivxTestFramework):
                                 miner.protx_update_service, mns[0].proTx, "",
                                 miner.getnewaddress(), mns[0].operator_sk)
         self.log.info("Trying to update the operator payee to an invalid address...")
-        assert_raises_rpc_error(-5, "invalid PIVX address InvalidPayee",
+        assert_raises_rpc_error(-5, "invalid ADON address InvalidPayee",
                                 miner.protx_update_service, dmn2c.proTx, "", "InvalidPayee", "")
         self.log.info("Update IP address...")
         mns[0].ipport = "127.0.0.1:1000"
@@ -336,7 +336,7 @@ class DIP3Test(PivxTestFramework):
         assert_raises_rpc_error(-1, "bad-protx-dup-key", controller.protx_update_registrar,
                                 mns[0].proTx, mns[1].operator_pk, "", "")
         self.log.info("Trying to update the payee to an invalid address...")
-        assert_raises_rpc_error(-5, "invalid PIVX address InvalidPayee", controller.protx_update_registrar,
+        assert_raises_rpc_error(-5, "invalid ADON address InvalidPayee", controller.protx_update_registrar,
                                 mns[0].proTx, "", "", "InvalidPayee")
         self.log.info("Update operator keys...")
         bls_keypair = self.nodes[mns[0].idx].generateblskeypair()

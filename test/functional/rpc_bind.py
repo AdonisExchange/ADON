@@ -2,12 +2,12 @@
 # Copyright (c) 2014-2017 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test running pivxd with the -rpcbind and -rpcallowip options."""
+"""Test running adond with the -rpcbind and -rpcallowip options."""
 
 import sys
 
 from test_framework.netutil import addr_to_hex, all_interfaces, get_bind_addrs, test_ipv6_local
-from test_framework.test_framework import PivxTestFramework, SkipTest
+from test_framework.test_framework import AdonTestFramework, SkipTest
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -18,7 +18,7 @@ from test_framework.util import (
 )
 
 
-class RPCBindTest(PivxTestFramework):
+class RPCBindTest(AdonTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.bind_to_localhost_only = False

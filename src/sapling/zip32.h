@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2020 The ZCash developers
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_ZIP32_H
-#define PIVX_ZIP32_H
+#ifndef ADON_ZIP32_H
+#define ADON_ZIP32_H
 
 #include "key.h"
 #include "optional.h"
@@ -124,4 +124,4 @@ bool IsValidSpendingKey(const libzcash::SpendingKey& zkey);
 /** Check whether a ViewingKey is not an InvalidEncoding. */
 bool IsValidViewingKey(const libzcash::ViewingKey& vk);
 
-#endif // PIVX_ZIP32_H
+#endif // ADON_ZIP32_H

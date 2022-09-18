@@ -7,7 +7,7 @@
 import time
 
 from test_framework.messages import COIN, MAX_BLOCK_BASE_SIZE
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -17,7 +17,7 @@ from test_framework.util import (
 )
 
 
-class PrioritiseTransactionTest(PivxTestFramework):
+class PrioritiseTransactionTest(AdonTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

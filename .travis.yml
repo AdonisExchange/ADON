@@ -14,7 +14,7 @@
 #
 # These caches can be manually removed if necessary. This is one of the very
 # few manual operations that is possible with Travis, and it can be done by a
-# PIVX GitHub member via the Travis web interface [0].
+# ADON GitHub member via the Travis web interface [0].
 #
 # Travis CI uploads the cache after the script phase of the build [1].
 # However, the build is terminated without saving the chache if it takes over
@@ -34,7 +34,7 @@ cache:
     - $TRAVIS_BUILD_DIR/depends/built
     - $TRAVIS_BUILD_DIR/depends/sdk-sources
     - $HOME/.ccache
-    - $HOME/.pivx-params
+    - $HOME/.adon-params
 stages:
   - lint
   - cmake
@@ -52,7 +52,7 @@ env:
     - CCACHE_TEMPDIR=/tmp/.ccache-temp
     - CCACHE_COMPRESS=1
     - CCACHE_DIR=$HOME/.ccache
-    - PARAMS_DIR=$HOME/.pivx-params
+    - PARAMS_DIR=$HOME/.adon-params
     - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
     - SDK_URL=https://bitcoincore.org/depends-sources/sdks
     - WINEDEBUG=fixme-all

@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The PIVX developers
+// Copyright (c) 2022 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
 #include "netbase.h"
-#include "test/test_pivx.h"
+#include "test/test_adon.h"
 #include "tiertwo/netfulfilledman.h"
 #include "utiltime.h"
 

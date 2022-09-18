@@ -10,10 +10,10 @@ filters are not enabled.
 
 from test_framework.messages import msg_mempool
 from test_framework.mininode import P2PInterface
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import assert_equal
 
-class P2PMempoolTests(PivxTestFramework):
+class P2PMempoolTests(AdonTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

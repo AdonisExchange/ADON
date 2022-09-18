@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The PIVX developers
+// Copyright (c) 2020 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_CYCLINGVECTOR_H
-#define PIVX_CYCLINGVECTOR_H
+#ifndef ADON_CYCLINGVECTOR_H
+#define ADON_CYCLINGVECTOR_H
 
 #include <sync.h>
 #include <vector>
@@ -33,4 +33,4 @@ public:
     std::vector<T> GetCache() const { LOCK(cs); return vec; }
 };
 
-#endif // PIVX_CYCLINGVECTOR_H
+#endif // ADON_CYCLINGVECTOR_H

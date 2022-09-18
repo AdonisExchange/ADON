@@ -1,9 +1,9 @@
-PIVX Core version v5.3.0 is now available from: <https://github.com/AdonisNetwork/ADON/releases>
+ADON Core version v5.3.0 is now available from: <https://github.com/AdonisNetwork/ADON/releases>
 
 Mandatory Update
 ==============
 
-PIVX Core v5.3.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will need to update their clients before enforcement of this update goes into effect.
+ADON Core v5.3.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will need to update their clients before enforcement of this update goes into effect.
 
 Update enforcement is currently scheduled to go into effect at the following time:
 
@@ -20,7 +20,7 @@ Please report bugs using the issue tracker at github: <https://github.com/Adonis
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/PIVX-Qt (on Mac) or pivxd/pivx-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/ADON-Qt (on Mac) or adond/adon-qt (on Linux).
 
 **Important note for Masternodes running over Tor (v2 onion address):**
 Before starting the node, copy the content of the `onion_private_key` file, located inside the data directory into a new `onion_v3_private_key` file inside the same directory.
@@ -35,7 +35,7 @@ If it's not done on time, the node will drop off the network.
 Sapling Parameters
 ==================
 
-In order to run, as all versions after 5.0.0, PIVX Core requires two files, `sapling-output.params` and `sapling-spend.params` (with total size ~50 MB), to be saved in a specific location.
+In order to run, as all versions after 5.0.0, ADON Core requires two files, `sapling-output.params` and `sapling-spend.params` (with total size ~50 MB), to be saved in a specific location.
 
 For the following packages, no action is required by the user:
 - macOS release `dmg` binaries will use the params that are bundled into the .app bundle.
@@ -44,19 +44,19 @@ For the following packages, no action is required by the user:
 
 For the other packages, the user must save the param files in the proper location:
 - macOS/Linux `tar.gz` tarballs include a bash script (`install-params.sh`) to copy the parameters in the appropriate location.
-- Windows `.zip` users need to manually copy the files from the `share/pivx` folder to the `%APPDATA%\PIVXParams` directory.
+- Windows `.zip` users need to manually copy the files from the `share/adon` folder to the `%APPDATA%\ADONParams` directory.
 - self compilers can run the script from the repository sources (`params/install-params.sh`), or copy the files directly from the `params` subdirectory.
 
 Compatibility
 ==============
 
-PIVX Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.12+, and Windows 7 and later.
+ADON Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.12+, and Windows 7 and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support), No attempt is made to prevent installing or running the software on Windows XP, you can still do so at your own risk but be aware that there are known instabilities and issues. Please do not report issues about Windows XP to the issue tracker.
 
-From PIVX Core v5.3 onwards, macOS versions earlier than 10.12 are no longer supported.
+From ADON Core v5.3 onwards, macOS versions earlier than 10.12 are no longer supported.
 
-PIVX Core should also work on most other Unix-like systems but is not frequently tested on them.
+ADON Core should also work on most other Unix-like systems but is not frequently tested on them.
 
 The node's known peers are persisted to disk in a file called `peers.dat`. The format of this file has been changed in a backwards-incompatible way in order to accommodate the storage of Tor v3 and other BIP155 addresses. This means that if the file is modified by v5.3 or newer then older versions will not be able to read it. Those old versions, in the event of a downgrade, will log an error message "Incorrect keysize in addrman deserialization" and will continue normal operation as if the file was missing, creating a new empty one. ([PR #2411](https://github.com/AdonisNetwork/ADON/pull/2411))
 
@@ -111,17 +111,17 @@ P2P and network changes
 
 #### Tor v3 hidden services support - addrv2 message (BIP155)
 
-This release adds support for Tor version 3 hidden services, and rumoring them over the network to other peers using [BIP155](https://github.com/bitcoin/bips/blob/master/bip-0155.mediawiki). Version 2 hidden services are still supported by PIVX Core, but the Tor network has started [deprecating](https://blog.torproject.org/v2-deprecation-timeline) them, and will remove support soon. ([PR #2411](https://github.com/AdonisNetwork/ADON/pull/2411))
+This release adds support for Tor version 3 hidden services, and rumoring them over the network to other peers using [BIP155](https://github.com/bitcoin/bips/blob/master/bip-0155.mediawiki). Version 2 hidden services are still supported by ADON Core, but the Tor network has started [deprecating](https://blog.torproject.org/v2-deprecation-timeline) them, and will remove support soon. ([PR #2411](https://github.com/AdonisNetwork/ADON/pull/2411))
 
-The Tor onion service that is automatically created by setting the `-listenonion` configuration parameter will now be created as a Tor v3 service instead of Tor v2. The private key that was used for Tor v2 (if any) will be left untouched in the `onion_private_key` file in the data directory (see `-datadir`) and can be removed if not needed. PIVX Core will no longer attempt to read it. The private key for the Tor v3 service will be saved in a file named `onion_v3_private_key`. To use the deprecated Tor v2 service (not recommended), then `onion_private_key` can be copied over `onion_v3_private_key`, e.g.
+The Tor onion service that is automatically created by setting the `-listenonion` configuration parameter will now be created as a Tor v3 service instead of Tor v2. The private key that was used for Tor v2 (if any) will be left untouched in the `onion_private_key` file in the data directory (see `-datadir`) and can be removed if not needed. ADON Core will no longer attempt to read it. The private key for the Tor v3 service will be saved in a file named `onion_v3_private_key`. To use the deprecated Tor v2 service (not recommended), then `onion_private_key` can be copied over `onion_v3_private_key`, e.g.
 `cp -f onion_private_key onion_v3_private_key`.
 
-#### Removal of reject network messages from PIVX Core (BIP61)
+#### Removal of reject network messages from ADON Core (BIP61)
 
 Nodes on the network can not generally be trusted to send valid ("reject") messages, so this should only ever be used when connected to a trusted node.
 Please use the recommended alternatives if you rely on this feature:
 
-* Testing or debugging of implementations of the PIVX P2P network protocol should be done by inspecting the log messages that are produced by a recent version of PIVX Core. PIVX Core logs debug messages (`-debug=<category>`) to a stream (`-printtoconsole`) or to a file (`-debuglogfile=<debug.log>`).
+* Testing or debugging of implementations of the ADON P2P network protocol should be done by inspecting the log messages that are produced by a recent version of ADON Core. ADON Core logs debug messages (`-debug=<category>`) to a stream (`-printtoconsole`) or to a file (`-debuglogfile=<debug.log>`).
 
 * Testing the validity of a block can be achieved by specific RPCs (`submitblock`)
 
@@ -132,17 +132,17 @@ Please use the recommended alternatives if you rely on this feature:
 Multi-wallet support
 --------------------
 
-PIVX Core now supports loading multiple, separate wallets ([PR #2337](https://github.com/AdonisNetwork/ADON/pull/2337)) with individual balances, keys and received transactions.
+ADON Core now supports loading multiple, separate wallets ([PR #2337](https://github.com/AdonisNetwork/ADON/pull/2337)) with individual balances, keys and received transactions.
 
-Multi-wallet is enabled by using more than one `-wallet` argument when starting PIVX client, either on the command line or in the `pivx.conf` config file.
+Multi-wallet is enabled by using more than one `-wallet` argument when starting ADON client, either on the command line or in the `adon.conf` config file.
 
-**In pivx-qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 5.3, other loaded wallets will remain synchronized to the node's current tip in the background.
+**In adon-qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 5.3, other loaded wallets will remain synchronized to the node's current tip in the background.
 
-PIVX Core 5.3.0 contains the following changes to the RPC interface and pivx-cli for multi-wallet:
+ADON Core 5.3.0 contains the following changes to the RPC interface and adon-cli for multi-wallet:
 
-* When running PIVX Core with a single wallet, there are **no** changes to the RPC interface or `pivx-cli`. All RPC calls and `pivx-cli` commands continue to work as before.
-* When running PIVX Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>` endpoint, and `pivx-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
-* When running PIVX Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>` endpoint, for example `127.0.0.1:8332/wallet/wallet1.dat`. `pivx-cli` commands should be run with a `-rpcwallet` option, for example `pivx-cli -rpcwallet=wallet1.dat getbalance`.
+* When running ADON Core with a single wallet, there are **no** changes to the RPC interface or `adon-cli`. All RPC calls and `adon-cli` commands continue to work as before.
+* When running ADON Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>` endpoint, and `adon-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
+* When running ADON Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>` endpoint, for example `127.0.0.1:8332/wallet/wallet1.dat`. `adon-cli` commands should be run with a `-rpcwallet` option, for example `adon-cli -rpcwallet=wallet1.dat getbalance`.
 
 * A new *node-level* `listwallets` RPC method is added to display which wallets are currently loaded. The names returned by this method are the same as those used in the HTTP endpoint and for the `rpcwallet` argument.
 
@@ -165,8 +165,8 @@ With this change, the `-blockminsize` command line option has been removed.
 Removal of Priority Estimation - Coin Age Priority
 --------------------------------------------------
 
-In previous versions of PIVX Core, a portion of each block could be reserved for transactions based on the age and value of UTXOs they spent. This concept (Coin Age Priority) is a policy choice by miners/stakers, and there are no consensus rules around the inclusion of Coin Age Priority transactions in blocks.
-PIVX Core v5.3.0 removes all remaining support for Coin Age Priority ([PR #2378](https://github.com/AdonisNetwork/ADON/pull/2378)). This has the following implications:
+In previous versions of ADON Core, a portion of each block could be reserved for transactions based on the age and value of UTXOs they spent. This concept (Coin Age Priority) is a policy choice by miners/stakers, and there are no consensus rules around the inclusion of Coin Age Priority transactions in blocks.
+ADON Core v5.3.0 removes all remaining support for Coin Age Priority ([PR #2378](https://github.com/AdonisNetwork/ADON/pull/2378)). This has the following implications:
 
 - The concept of *free transactions* has been removed. High Coin Age Priority transactions would previously be allowed to be relayed even if they didn't attach a miner fee. This is no longer possible since there is no concept of Coin Age Priority. The `-limitfreerelay` and `-relaypriority` options which controlled relay of free transactions have therefore been removed.
 - The `-blockprioritysize` option has been removed.
@@ -179,7 +179,7 @@ Configuration/Settings changes
 
 #### Wallets directory configuration (`-walletdir`)
 
-PIVX Core now has more flexibility in where the wallets directory can be located. Previously wallet database files were stored at the top level of the PIVX data directory ([PR #2423](https://github.com/AdonisNetwork/ADON/pull/2423)). The behavior is now:
+ADON Core now has more flexibility in where the wallets directory can be located. Previously wallet database files were stored at the top level of the ADON data directory ([PR #2423](https://github.com/AdonisNetwork/ADON/pull/2423)). The behavior is now:
 
 - For new installations (where the data directory doesn't already exist), wallets will now be stored in a new `wallets/` subdirectory inside the data directory by default.
 
@@ -191,7 +191,7 @@ Care should be taken when choosing the wallets directory location, as if it beco
 
 #### External wallet files
 
-A new `-wallet=<path>` option allows the user to specify the wallet db location. It accepts either absolute paths or paths relative to the `-walletdir` directory. Multiple `-wallet` paths can be configured at the same time in order to run PIVX Core with multiple wallets (see section "Multi-wallet support").
+A new `-wallet=<path>` option allows the user to specify the wallet db location. It accepts either absolute paths or paths relative to the `-walletdir` directory. Multiple `-wallet` paths can be configured at the same time in order to run ADON Core with multiple wallets (see section "Multi-wallet support").
 
 If `-wallet=<path>` is specified with a path that does not exist, it will create a wallet directory at the specified location (containing a `wallet.dat` data file, a `db.log` file, and `database/log.??????????` files).
 If `-wallet=<path>` is specified with paths that are names of existing data files in the `-walletdir` directory, then log files are stored in the parent directory.
@@ -200,8 +200,8 @@ If `-wallet=<path>` is specified with paths that are names of existing data file
 
 It is now possible for a single configuration file to set different options for different networks ([PR #2324](https://github.com/AdonisNetwork/ADON/pull/2324)). This is done by using sections or by prefixing the option with the network, such as:
 ```
-    main.uacomment=pivx
-    test.uacomment=pivx-testnet
+    main.uacomment=adon
+    test.uacomment=adon-testnet
     regtest.uacomment=regtest
     [main]
     mempoolsize=300
@@ -233,16 +233,16 @@ Low-level RPC changes
 
 #### Support for JSON-RPC Named Arguments
 
-Commands sent over the JSON-RPC interface and through the `pivx-cli` binary can now use named arguments. This follows the [JSON-RPC specification](http://www.jsonrpc.org/specification) for passing parameters by-name with an object.
-`pivx-cli` has been updated to support this by parsing `name=value` arguments when the `-named` option is given. ([PR #2386](https://github.com/AdonisNetwork/ADON/pull/2386))
+Commands sent over the JSON-RPC interface and through the `adon-cli` binary can now use named arguments. This follows the [JSON-RPC specification](http://www.jsonrpc.org/specification) for passing parameters by-name with an object.
+`adon-cli` has been updated to support this by parsing `name=value` arguments when the `-named` option is given. ([PR #2386](https://github.com/AdonisNetwork/ADON/pull/2386))
 
 Some examples:
 
 ```
-    src/pivx-cli -named help command="help"
-    src/pivx-cli -named getblockhash height=0
-    src/pivx-cli -named getblock blockhash=000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
-    src/pivx-cli -named sendtoaddress address="DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6" amount="1.0" comment="donation"
+    src/adon-cli -named help command="help"
+    src/adon-cli -named getblockhash height=0
+    src/adon-cli -named getblock blockhash=000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+    src/adon-cli -named sendtoaddress address="DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6" amount="1.0" comment="donation"
 ```
 
 The order of arguments doesn't matter in this case. Named arguments are also useful to leave out arguments that should stay at their default value.
@@ -263,7 +263,7 @@ The `listunspent` output also shows whether the utxo is considered safe to spend
 
 #### Wallet name returned by `getwalletinfo`
 
-`walletinfo` return object includes a `"walletname"` field. When PIVX is not started with any `-wallet=<path>` options, the name of the default wallet returned by `getwalletinfo` (and `listwallets`) RPCs is the empty string `""`. If PIVX is started with any `-wallet=<path>` options, the name of any wallet is its `<path>` string.
+`walletinfo` return object includes a `"walletname"` field. When ADON is not started with any `-wallet=<path>` options, the name of the default wallet returned by `getwalletinfo` (and `listwallets`) RPCs is the empty string `""`. If ADON is started with any `-wallet=<path>` options, the name of any wallet is its `<path>` string.
 
 #### Removal of 'detach' argument from `stop`
 
@@ -307,7 +307,7 @@ The `stop` RPC no longer accepts the (already deprecated, ignored, and undocumen
   sendtoaddress "addr1" 0.1 "test" "" true
   ```
 
-In all cases the selected recipients will receive less PIV than their corresponding amount set.
+In all cases the selected recipients will receive less ADON than their corresponding amount set.
 If no outputs/addresses are specified, the sender pays the fee as usual. ([PR #2341](https://github.com/AdonisNetwork/ADON/pull/2341))
 
 ### New output fields in `getmempoolinfo`
@@ -316,7 +316,7 @@ If no outputs/addresses are specified, the sender pays the fee as usual. ([PR #2
 ```
 "loaded": true|false      (boolean) Whether the mempool is fully loaded
 "maxmempool": xxxxx       (numeric) Maximum memory usage for the mempool
-"mempoolminfee": xxxxx    (numeric) Minimum fee rate in PIVX/kB for tx to be
+"mempoolminfee": xxxxx    (numeric) Minimum fee rate in ADON/kB for tx to be
                           accepted. Is the maximum of minrelaytxfee and
                           minimum mempool fee
 "minrelaytxfee": xxxxx    (numeric) Current minimum relay fee for transactions
@@ -324,7 +324,7 @@ If no outputs/addresses are specified, the sender pays the fee as usual. ([PR #2
 
 #### `ischange` added to `getaddressinfo` output
 
-Boolean value, to return whether the PIVX (transparent) address was used for change output.
+Boolean value, to return whether the ADON (transparent) address was used for change output.
 
 #### `mapped_as` added to `getpeerinfo` output
 
@@ -343,7 +343,7 @@ The `autocombine` RPC command has been replaced ([PR #2248](https://github.com/A
     setautocombinethreshold enable ( value )
     This will set the auto-combine threshold value.
     Wallet will automatically monitor for any coins with value below the threshold amount,
-    and combine them if they reside with the same PIVX address.  When auto-combine runs,
+    and combine them if they reside with the same ADON address.  When auto-combine runs,
     it will create a transaction, and therefore will be subject to transaction fees.
 
     Arguments:
@@ -354,7 +354,7 @@ The `autocombine` RPC command has been replaced ([PR #2248](https://github.com/A
     Result:
     {
       "enabled": true|false,     (boolean) true if auto-combine is enabled, otherwise false
-      "threshold": n.nnn,        (numeric) auto-combine threshold in PIV
+      "threshold": n.nnn,        (numeric) auto-combine threshold in ADON
       "saved": true|false        (boolean) true if setting was saved to the database, otherwise false
     }
     ```
@@ -367,7 +367,7 @@ The `autocombine` RPC command has been replaced ([PR #2248](https://github.com/A
     Result:
     {
       "enabled": true|false,    (boolean) true if auto-combine is enabled, otherwise false
-      "threshold": n.nnn        (numeric) the auto-combine threshold amount in PIV
+      "threshold": n.nnn        (numeric) the auto-combine threshold amount in ADON
     }
     ```
 
@@ -508,7 +508,7 @@ The `autocombine` RPC command has been replaced ([PR #2248](https://github.com/A
     Mine blocks immediately to a specified address (before the RPC call returns)
     Arguments:
     1. nblocks          (numeric, required) How many blocks are generated immediately.
-    2. "address"        (string, required) The address to send the newly generated PIVs to.
+    2. "address"        (string, required) The address to send the newly generated ADONs to.
     Result:
     [ blockhashes ]     (array) hashes of blocks generated
     ```
@@ -520,7 +520,7 @@ Database cache memory increased
 As a result of growth of the UTXO set, performance with the prior default database cache of 100 MiB has suffered.
 For this reason the default was changed to 300 MiB in this release.
 For nodes on low-memory systems, the database cache can be changed back to 100 MiB (or to another value) by either:
-- Adding `dbcache=100` in `pivx.conf`
+- Adding `dbcache=100` in `adon.conf`
 - Adding `-dbcache=100` startup flag
 - Changing it in the GUI under `Settings → Options → Main → Size of database cache`
 
@@ -536,13 +536,13 @@ Build system changes
 
 #### C++14 standard
 
-PIVX Core now requires a C++14 compiler ([PR #2269](https://github.com/AdonisNetwork/ADON/pull/2269)).
+ADON Core now requires a C++14 compiler ([PR #2269](https://github.com/AdonisNetwork/ADON/pull/2269)).
 
 #### Bump miniUPnPc API version
 
 The minimum supported miniUPnPc API version is set to 10. This keeps compatibility with Ubuntu 16.04 LTS and Debian 8 `libminiupnpc-dev` packages. Please note, on Debian this package is still vulnerable to [CVE-2017-8798](https://security-tracker.debian.org/tracker/CVE-2017-8798) (in jessie only) and [CVE-2017-1000494](https://security-tracker.debian.org/tracker/CVE-2017-1000494) (both in jessie and in stretch).
 
-OpenSSL is no longer used by PIVX Core
+OpenSSL is no longer used by ADON Core
 
 #### Disabled PoW mining RPC Commands
 
@@ -550,9 +550,9 @@ A new configure flag has been introduced to allow more granular control over wea
 
 #### NAT-PMP Support
 
-PIVX v5.3.0 added NAT-PMP port-mapping support via [`libnatpmp`](https://miniupnp.tuxfamily.org/libnatpmp.html). Similar to how UPnP is treated, NAT-PMP will be compiled if the library is found, but the functionality is disabled unless either using the `-natpmp` option at startup (see section "Configuration changes"), or selecting the relative checkbox in the graphical interface (see section "GUI changes").
+ADON v5.3.0 added NAT-PMP port-mapping support via [`libnatpmp`](https://miniupnp.tuxfamily.org/libnatpmp.html). Similar to how UPnP is treated, NAT-PMP will be compiled if the library is found, but the functionality is disabled unless either using the `-natpmp` option at startup (see section "Configuration changes"), or selecting the relative checkbox in the graphical interface (see section "GUI changes").
 
-Alternatively, PIVX Core can be compiled with the functionality enabled by default passing `--enable-natpmp-default` to the `configure` script.
+Alternatively, ADON Core can be compiled with the functionality enabled by default passing `--enable-natpmp-default` to the `configure` script.
 
 ISO 8601 for timestamps in logs and backup file names
 -----------------------------------------------------
@@ -628,12 +628,12 @@ v5.3.0 Change log
 - #2375 [RPC] Update getrawtransaction warning message (random-zebra)
 - #2386 Support for JSON-RPC named arguments (random-zebra)
 - #2392 [RPC] Remove compiler warning in autocombinerewards and update help text (random-zebra)
-- #2476 correct non PIVXified help commands texts and add missing "ischange" result (furszy)
+- #2476 correct non ADONified help commands texts and add missing "ischange" result (furszy)
 - #2503 [Net] Add getnodeaddresses RPC command (Fuzzbawls)
 - #2519 [RPC] Do not register DMN-related RPC commands (random-zebra)
 
 ### GUI
-- #2249 Make box of PIVX Send address return to purple when it's empty (PicklesRcool)
+- #2249 Make box of ADON Send address return to purple when it's empty (PicklesRcool)
 - #2247 Fix double fade-in Topbar Available click animation. Issue 2216 (PicklesRcool)
 - #2237 Set fee to highest possible if input is too big (dnchk)
 - #2264 fix 'split is deprecated' warnings (Fuzzbawls)
@@ -647,13 +647,13 @@ v5.3.0 Change log
 - #2372 RPC-Console nested commands documentation (random-zebra)
 - #2388 Ensure that all UI error/warning texts pass through translation (Fuzzbawls)
 - #2403 transaction model, cleanup unused hasZcTxes flag (furszy)
-- #2397 Fix invalid MN collateral amount and align every static 10k PIV strings (furszy)
+- #2397 Fix invalid MN collateral amount and align every static 10k ADON strings (furszy)
 - #2380 [Cleanup] guiutils cleanup + fix memory mismanagement (furszy)
 - #2347 Add GUI controls for subtract-fee-from-amount (random-zebra)
 - #2490 [BugFix] fix app always triggering the tutorial dialog if no manual '-wallet' arg is provided (furszy)
 - #2448 Periodic make translate (Fuzzbawls)
 - #2481 [BUG][GUI] Fix P2CS grouping in coin control (random-zebra)
-- #2506 bugfix, the command line interface is called "pivx-cli" not "pivx-core" (furszy)
+- #2506 bugfix, the command line interface is called "adon-cli" not "adon-core" (furszy)
 - #2513 [GUI] Remove extra jump line in mnb creation error message (furszy)
 - #2516 [GUI][BUG] Console: allow empty arguments (random-zebra)
 

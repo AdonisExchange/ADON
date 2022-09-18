@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# Copyright (c) 2019-2020 The PIVX developers
+# Copyright (c) 2019-2020 The ADON developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -14,7 +14,7 @@ from test_framework.util import (
     DecimalAmt,
 )
 
-class ReorgStakeTest(PivxTestFramework):
+class ReorgStakeTest(AdonTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 3
@@ -50,11 +50,11 @@ class ReorgStakeTest(PivxTestFramework):
         assert_equal(self.nodes[nodeid].getblockcount(), wi['last_processed_block'])
         return wi['balance'] + wi['immature_balance']
 
-    def check_money_supply(self, expected_piv):
-        # verify that nodes have the expected PIV supply
-        piv_supply = [self.nodes[i].getsupplyinfo(True)['transparentsupply']
+    def check_money_supply(self, expected_adon):
+        # verify that nodes have the expected ADON supply
+        adon_supply = [self.nodes[i].getsupplyinfo(True)['transparentsupply']
                       for i in range(self.num_nodes)]
-        assert_equal(piv_supply, [DecimalAmt(expected_piv)] * self.num_nodes)
+        assert_equal(adon_supply, [DecimalAmt(expected_adon)] * self.num_nodes)
 
 
     def run_test(self):
@@ -65,7 +65,7 @@ class ReorgStakeTest(PivxTestFramework):
                     return True, x
             return False, None
 
-        # PIV supply: block rewards
+        # ADON supply: block rewards
         expected_money_supply = 250.0 * 200
         self.check_money_supply(expected_money_supply)
         initial_time = self.mocktime
@@ -161,8 +161,8 @@ class ReorgStakeTest(PivxTestFramework):
         res, utxo = findUtxoInList(stakeinput["txid"], stakeinput["vout"], self.nodes[0].listunspent())
         assert not res
 
-        # Verify that PIV supply was properly updated after the reorgs (including burned fee)
-        self.log.info("Check PIV supply...")
+        # Verify that ADON supply was properly updated after the reorgs (including burned fee)
+        self.log.info("Check ADON supply...")
         expected_money_supply += 250.0 * (self.nodes[1].getblockcount() - 200) - 0.01
         self.check_money_supply(expected_money_supply)
         self.log.info("Supply checks out.")

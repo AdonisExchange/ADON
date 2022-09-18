@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The PIVX Core developers
+# Copyright (c) 2021 The ADON Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
@@ -14,7 +14,7 @@ import random
 import time
 
 from test_framework.messages import COutPoint
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -26,7 +26,7 @@ from test_framework.util import (
 )
 
 
-class TiertwoReorgMempoolTest(PivxTestFramework):
+class TiertwoReorgMempoolTest(AdonTestFramework):
 
     def set_test_params(self):
         # two nodes mining on separate chains

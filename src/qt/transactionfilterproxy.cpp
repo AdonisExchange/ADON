@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2017-2020 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
@@ -113,6 +113,6 @@ int TransactionFilterProxy::rowCount(const QModelIndex& parent) const
 bool TransactionFilterProxy::isOrphan(const int status, const int type)
 {
     return ( (type == TransactionRecord::Generated || type == TransactionRecord::StakeMint ||
-            type == TransactionRecord::StakeZPIV || type == TransactionRecord::MNReward || type == TransactionRecord::BudgetPayment)
+            type == TransactionRecord::StakeZADON || type == TransactionRecord::MNReward || type == TransactionRecord::BudgetPayment)
             && (status == TransactionStatus::Conflicted || status == TransactionStatus::NotAccepted) );
 }

@@ -13,7 +13,7 @@ import subprocess
 import sys
 import urllib.parse
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import (
     assert_equal,
     get_datadir_path,
@@ -33,13 +33,13 @@ def call_with_auth(node, user, password):
     return resp
 
 
-class HTTPBasicsTest(PivxTestFramework):
+class HTTPBasicsTest(AdonTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 
     def setup_chain(self):
         super().setup_chain()
-        #Append rpcauth to pivx.conf before initialization
+        #Append rpcauth to adon.conf before initialization
         rpcauth = "rpcauth=rt:93648e835a54c573682c2eb19f882535$7681e9c5b74bdd85e78166031d2058e1069b3ed7ed967c93fc63abba06f31144"
         rpcuser = "rpcuser=rpcuser💻"
         rpcpassword = "rpcpassword=rpcpassword🔑"
@@ -63,11 +63,11 @@ class HTTPBasicsTest(PivxTestFramework):
         rpcauth3 = lines[1]
         self.password = lines[3]
 
-        with open(os.path.join(get_datadir_path(self.options.tmpdir, 0), "pivx.conf"), 'a', encoding='utf8') as f:
+        with open(os.path.join(get_datadir_path(self.options.tmpdir, 0), "adon.conf"), 'a', encoding='utf8') as f:
             f.write(rpcauth+"\n")
             f.write(rpcauth2+"\n")
             f.write(rpcauth3+"\n")
-        with open(os.path.join(get_datadir_path(self.options.tmpdir, 1), "pivx.conf"), 'a', encoding='utf8') as f:
+        with open(os.path.join(get_datadir_path(self.options.tmpdir, 1), "adon.conf"), 'a', encoding='utf8') as f:
             f.write(rpcuser+"\n")
             f.write(rpcpassword+"\n")
 

@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the walletupgrade functionality.
 
-- 1) start one pivxd node from an pre-HD wallet wallet.dat file localized in util/data
+- 1) start one adond node from an pre-HD wallet wallet.dat file localized in util/data
 - 2) dumpwallet and get all the keys.
 - 3) Upgrade Wallet: stopnode and initialize it with the -upgradewallet flag.
 - 4) Verify that all of the pre-HD keys are still in the upgraded wallet.
@@ -15,7 +15,7 @@
 import os
 import shutil
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import assert_equal
 
 
@@ -64,7 +64,7 @@ def copyPreHDWallet(tmpdir, createFolder):
     sourcePath = os.path.join("test", "util", "data", "pre_hd_wallet.dat")
     shutil.copyfile(sourcePath, destPath)
 
-class WalletUpgradeTest (PivxTestFramework):
+class WalletUpgradeTest (AdonTestFramework):
 
     def setup_chain(self):
         self._initialize_chain_clean()

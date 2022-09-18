@@ -2,6 +2,6 @@
 host = https://www.transifex.com
 
 [AdonisNetwork-translations.qt-translation-50x]
-file_filter = src/qt/locale/pivx_<lang>.ts
-source_file = src/qt/locale/pivx_en.ts
+file_filter = src/qt/locale/adon_<lang>.ts
+source_file = src/qt/locale/adon_en.ts
 source_lang = en

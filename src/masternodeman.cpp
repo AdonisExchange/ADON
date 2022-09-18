@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The ADON developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -793,7 +793,7 @@ bool CMasternodeMan::CheckInputs(CMasternodeBroadcast& mnb, int nChainHeight, in
     }
 
     // verify that sig time is legit in past
-    // should be at least not earlier than block when 1000 PIV tx got MASTERNODE_MIN_CONFIRMATIONS
+    // should be at least not earlier than block when 1000 ADON tx got MASTERNODE_MIN_CONFIRMATIONS
     CBlockIndex* pConfIndex = WITH_LOCK(cs_main, return chainActive[utxoHeight + consensus.MasternodeCollateralMinConf() - 1]); // block where tx got MASTERNODE_MIN_CONFIRMATIONS
     if (pConfIndex->GetBlockTime() > mnb.sigTime) {
         LogPrint(BCLog::MASTERNODE,"mnb - Bad sigTime %d for Masternode %s (%i conf block is at %d)\n",
@@ -1157,7 +1157,7 @@ bool CMasternodeMan::IsWithinDepth(const uint256& nHash, int depth) const
 void ThreadCheckMasternodes()
 {
     // Make this thread recognisable as the wallet flushing thread
-    util::ThreadRename("pivx-masternodeman");
+    util::ThreadRename("adon-masternodeman");
     LogPrintf("Masternodes thread started\n");
 
     unsigned int c = 0;

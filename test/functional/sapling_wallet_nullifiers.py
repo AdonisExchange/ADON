@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 # Copyright (c) 2016 The Zcash developers
-# Copyright (c) 2020 The PIVX developers
+# Copyright (c) 2020 The ADON developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
 from decimal import Decimal
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import AdonTestFramework
 from test_framework.util import assert_equal, assert_true, get_coinstake_address
 
-class WalletNullifiersTest(PivxTestFramework):
+class WalletNullifiersTest(AdonTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 4

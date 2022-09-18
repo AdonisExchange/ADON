@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2018-2019 The Bitcoin Core developers
-# Copyright (c) 2019-2020 The PIVX developers
+# Copyright (c) 2019-2020 The ADON developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -105,11 +105,11 @@ def setup_darwin():
 def setup_repos():
     if not os.path.isdir('gitian.sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/AdonisNetwork/gitian.sigs.git'])
-    if not os.path.isdir('pivx-detached-sigs'):
+    if not os.path.isdir('adon-detached-sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/AdonisNetwork/ADON-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
-    if not os.path.isdir('pivx'):
+    if not os.path.isdir('adon'):
         subprocess.check_call(['git', 'clone', 'https://github.com/AdonisNetwork/ADON.git'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
@@ -137,34 +137,34 @@ def setup_repos():
 def build():
     global args, workdir
 
-    os.makedirs('pivx-binaries/' + args.version, exist_ok=True)
+    os.makedirs('adon-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
 
     subprocess.check_call(['wget', '-O', 'inputs/osslsigncode-2.0.tar.gz', 'https://github.com/mtrojnar/osslsigncode/archive/2.0.tar.gz'])
     subprocess.check_call(["echo '5a60e0a4b3e0b4d655317b2f12a810211c50242138322b16e7e01c6fbb89d92f inputs/osslsigncode-2.0.tar.gz' | sha256sum -c"], shell=True)
-    subprocess.check_call(['make', '-C', '../pivx/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
+    subprocess.check_call(['make', '-C', '../adon/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'pivx='+args.commit, '--url', 'pivx='+args.url, '../pivx/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../pivx/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/pivx-*.tar.gz build/out/src/pivx-*.tar.gz ../pivx-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'adon='+args.commit, '--url', 'adon='+args.url, '../adon/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../adon/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call('mv build/out/adon-*.tar.gz build/out/src/adon-*.tar.gz ../adon-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'pivx='+args.commit, '--url', 'pivx='+args.url, '../pivx/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../pivx/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/pivx-*-win-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/pivx-*.zip build/out/pivx-*.exe build/out/src/pivx-*.tar.gz ../pivx-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'adon='+args.commit, '--url', 'adon='+args.url, '../adon/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../adon/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call('mv build/out/adon-*-win-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/adon-*.zip build/out/adon-*.exe build/out/src/adon-*.tar.gz ../adon-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'pivx='+args.commit, '--url', 'pivx='+args.url, '../pivx/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../pivx/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/pivx-*-osx-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/pivx-*.tar.gz build/out/pivx-*.dmg build/out/src/pivx-*.tar.gz ../pivx-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'adon='+args.commit, '--url', 'adon='+args.url, '../adon/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../adon/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call('mv build/out/adon-*-osx-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/adon-*.tar.gz build/out/adon-*.dmg build/out/src/adon-*.tar.gz ../adon-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -184,27 +184,27 @@ def sign():
 
     # TODO: Skip making signed windows sigs until we actually start producing signed windows binaries
     #print('\nSigning ' + args.version + ' Windows')
-    #subprocess.check_call('cp inputs/pivx-' + args.version + '-win-unsigned.tar.gz inputs/pivx-win-unsigned.tar.gz', shell=True)
-    #subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../pivx/contrib/gitian-descriptors/gitian-win-signer.yml'])
-    #subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../pivx/contrib/gitian-descriptors/gitian-win-signer.yml'])
-    #subprocess.check_call('mv build/out/pivx-*win64-setup.exe ../pivx-binaries/'+args.version, shell=True)
-    #subprocess.check_call('mv build/out/pivx-*win32-setup.exe ../pivx-binaries/'+args.version, shell=True)
+    #subprocess.check_call('cp inputs/adon-' + args.version + '-win-unsigned.tar.gz inputs/adon-win-unsigned.tar.gz', shell=True)
+    #subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../adon/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    #subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../adon/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    #subprocess.check_call('mv build/out/adon-*win64-setup.exe ../adon-binaries/'+args.version, shell=True)
+    #subprocess.check_call('mv build/out/adon-*win32-setup.exe ../adon-binaries/'+args.version, shell=True)
 
     print('\nSigning ' + args.version + ' MacOS')
-    subprocess.check_call('cp inputs/pivx-' + args.version + '-osx-unsigned.tar.gz inputs/pivx-osx-unsigned.tar.gz', shell=True)
-    subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../pivx/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-    subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../pivx/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-    subprocess.check_call('mv build/out/pivx-osx-signed.dmg ../pivx-binaries/'+args.version+'/pivx-'+args.version+'-osx.dmg', shell=True)
+    subprocess.check_call('cp inputs/adon-' + args.version + '-osx-unsigned.tar.gz inputs/adon-osx-unsigned.tar.gz', shell=True)
+    subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../adon/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../adon/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call('mv build/out/adon-osx-signed.dmg ../adon-binaries/'+args.version+'/adon-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
     if args.commit_files:
         os.chdir('gitian.sigs')
         commit = False
-        if os.path.isfile(args.version+'-win-signed/'+args.signer+'/pivx-win-signer-build.assert.sig'):
+        if os.path.isfile(args.version+'-win-signed/'+args.signer+'/adon-win-signer-build.assert.sig'):
             subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
             commit = True
-        if os.path.isfile(args.version+'-osx-signed/'+args.signer+'/pivx-dmg-signer-build.assert.sig'):
+        if os.path.isfile(args.version+'-osx-signed/'+args.signer+'/adon-dmg-signer-build.assert.sig'):
             subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
             commit = True
         if commit:
@@ -221,28 +221,28 @@ def verify():
     os.chdir('gitian-builder')
 
     print('\nVerifying v'+args.version+' Linux\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../pivx/contrib/gitian-descriptors/gitian-linux.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../adon/contrib/gitian-descriptors/gitian-linux.yml']):
         print('Verifying v'+args.version+' Linux FAILED\n')
         rc = 1
 
     print('\nVerifying v'+args.version+' Windows\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../pivx/contrib/gitian-descriptors/gitian-win.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../adon/contrib/gitian-descriptors/gitian-win.yml']):
         print('Verifying v'+args.version+' Windows FAILED\n')
         rc = 1
 
     print('\nVerifying v'+args.version+' MacOS\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../pivx/contrib/gitian-descriptors/gitian-osx.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../adon/contrib/gitian-descriptors/gitian-osx.yml']):
         print('Verifying v'+args.version+' MacOS FAILED\n')
         rc = 1
 
     # TODO: Skip checking signed windows sigs until we actually start producing signed windows binaries
     #print('\nVerifying v'+args.version+' Signed Windows\n')
-    #if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../pivx/contrib/gitian-descriptors/gitian-win-signer.yml']):
+    #if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../adon/contrib/gitian-descriptors/gitian-win-signer.yml']):
     #    print('Verifying v'+args.version+' Signed Windows FAILED\n')
     #    rc = 1
 
     print('\nVerifying v'+args.version+' Signed MacOS\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../pivx/contrib/gitian-descriptors/gitian-osx-signer.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../adon/contrib/gitian-descriptors/gitian-osx-signer.yml']):
         print('Verifying v'+args.version+' Signed MacOS FAILED\n')
         rc = 1
 
@@ -357,12 +357,12 @@ def main():
         raise Exception('Cannot have both commit and pull')
     args.commit = ('' if args.commit else 'v') + args.version
 
-    os.chdir('pivx')
+    os.chdir('adon')
     if args.pull:
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])
-        if not os.path.isdir('../gitian-builder/inputs/pivx'):
-            os.makedirs('../gitian-builder/inputs/pivx')
-        os.chdir('../gitian-builder/inputs/pivx')
+        if not os.path.isdir('../gitian-builder/inputs/adon'):
+            os.makedirs('../gitian-builder/inputs/adon')
+        os.chdir('../gitian-builder/inputs/adon')
         if not os.path.isdir('.git'):
             subprocess.check_call(['git', 'init'])
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])

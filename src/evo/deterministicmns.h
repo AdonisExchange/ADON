@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2021 The Dash Core developers
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_DETERMINISTICMNS_H
-#define PIVX_DETERMINISTICMNS_H
+#ifndef ADON_DETERMINISTICMNS_H
+#define ADON_DETERMINISTICMNS_H
 
 #include "arith_uint256.h"
 #include "bls/bls_wrapper.h"
@@ -598,4 +598,4 @@ private:
 
 extern std::unique_ptr<CDeterministicMNManager> deterministicMNManager;
 
-#endif //PIVX_DETERMINISTICMNS_H
+#endif //ADON_DETERMINISTICMNS_H
