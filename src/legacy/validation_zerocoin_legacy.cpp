@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The ADON developers
+// Copyright (c) 2020-2022 The ADON developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 #include "legacy/validation_zerocoin_legacy.h"
