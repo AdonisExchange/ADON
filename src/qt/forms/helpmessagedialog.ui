@@ -93,7 +93,7 @@
          </size>
         </property>
         <property name="pixmap">
-         <pixmap>:/images/about</pixmap>
+         <pixmap>:/images/about-qt</pixmap>
         </property>
        </widget>
       </item>

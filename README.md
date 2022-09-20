@@ -2,8 +2,8 @@ ADON Core integration/staging repository
 =====================================
 
 [![master Actions Status](https://github.com/AdonisNetwork/ADON/workflows/CI%20Actions%20for%20ADON/badge.svg)](https://github.com/AdonisNetwork/ADON/actions)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AdonisNetwork/ADON?color=%235c4b7d&cacheSeconds=3600)](https://github.com/AdonisNetwork/ADON/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/AdonisNetwork/ADON?color=%235c4b7d&cacheSeconds=3600)](https://github.com/AdonisNetwork/ADON/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AdonisNetwork/ADON?color=%23002144&cacheSeconds=3600)](https://github.com/AdonisNetwork/ADON/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/AdonisNetwork/ADON?color=%23002144&cacheSeconds=3600)](https://github.com/AdonisNetwork/ADON/releases)
 
 ## What is ADON?
 

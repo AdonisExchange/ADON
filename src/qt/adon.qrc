@@ -18,6 +18,7 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
+        <file alias="about-qt">res/images/about-qt.png</file>
         <file alias="splash">res/images/splash.png</file>
         <file alias="splash_testnet">res/images/splash_testnet.png</file>
         <file alias="splash_regtest">res/images/splash_regtest.png</file>
@@ -93,6 +94,7 @@
         <file alias="ic-close-white">adon/res/img/ic-close-white.svg</file>
         <file alias="ic-close">adon/res/img/ic-close.svg</file>
         <file alias="ic-coin-adon">adon/res/img/ic-coin-adon.svg</file>
+        <file alias="ic-coin-adon-dark">adon/res/img/ic-coin-adon-dark.svg</file>
         <file alias="ic-coin-zadon">adon/res/img/ic-coin-zadon.svg</file>
         <file alias="ic-combo-box">adon/res/img/ic-combo-box.svg</file>
         <file alias="ic-connect">adon/res/img/ic-connect.svg</file>

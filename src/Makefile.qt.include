@@ -389,6 +389,7 @@ RES_ICONS = \
   qt/adon/res/img/img-empty-staking-off.svg \
   qt/adon/res/img/ic-arrow-drop-down.svg \
   qt/adon/res/img/ic-coin-adon.svg \
+    qt/adon/res/img/ic-coin-adon-dark.svg \
   qt/adon/res/img/ic-receive-off.svg \
   qt/adon/res/img/img-empty-staking-on.svg \
   qt/adon/res/img/ic-arrow-drop-up-white.svg \
@@ -626,6 +627,7 @@ endif
 
 RES_IMAGES = \
   qt/res/images/about.png \
+  qt/res/images/about-qt.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
   qt/res/images/splash_regtest.png

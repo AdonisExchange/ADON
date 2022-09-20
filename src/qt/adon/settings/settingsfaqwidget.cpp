@@ -113,7 +113,7 @@ SettingsFaqWidget::SettingsFaqWidget(ADONGUI* parent, MNModel* mnModel) :
     QString supportContent = formatFAQContent(
         formatFAQParagraph(
             tr("We have support channels in most of our official chat groups, for example %1")
-                .arg("<a style='color: #b088ff' href='https://discord.adonis.network'>" + tr("#support in our Discord") + "</a>.")));
+                .arg("<a style='color: #002144' href='https://discord.adonis.network'>" + tr("#support in our Discord") + "</a>.")));
     ui->labelContent_Support->setText(supportContent);
 
     QString masternodeContent = formatFAQContent(
