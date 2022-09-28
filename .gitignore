@@ -175,3 +175,4 @@ adond-new-gui.*
 
 # Not these files
 !/src/adond.cpp
+!/doc/man/adond.1
