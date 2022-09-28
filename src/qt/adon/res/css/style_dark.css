@@ -149,8 +149,8 @@ QPushButton[cssClass="btn-check-cold-staking"] {
     qproperty-icon: url("://ic-check-cold-staking");
     qproperty-iconSize: 24px 24px;
     color:#ffffff;
-    background-color:#ffc200;
-    border-bottom:2px solid #ffe861;
+    background-color:#50ffc200;
+    border-bottom:2px solid #d6d3c8;
     border-radius:2px;
 }
 
@@ -160,7 +160,7 @@ QPushButton[cssClass="btn-check-cold-staking-inactive"] {
     qproperty-iconSize: 24px 24px;
     color:#B3FFFFFF;
     background-color:#40ffc200;
-    border-bottom:2px solid #ffe861;
+    border-bottom:2px solid #d6d3c8;
     border-radius:2px;
 }
 
@@ -176,7 +176,7 @@ QPushButton[cssClass="btn-check-cold-staking-unchecked"] {
     qproperty-icon: url("://ic-check-cold-staking-enabled");
     qproperty-iconSize: 24px 24px;
     color:#B3FFFFFF;
-    background-color:#40ffc200;
+    background-color:#50ffc200;
     border-bottom:2px solid #ffe861;
     border-radius:2px;
 }
