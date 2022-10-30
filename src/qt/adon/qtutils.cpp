@@ -231,11 +231,11 @@ void updateStyle(QWidget* widget)
 QColor getRowColor(bool isLightTheme, bool isHovered, bool isSelected)
 {
     if (isSelected) {
-        return QColor("#25b088ff");
+        return QColor("#25002144");
     } else if (isHovered) {
         return QColor("#25bababa");
     } else {
-        return isLightTheme ? QColor("#ffffff") : QColor("#0f0b16");
+        return isLightTheme ? QColor("#ffffff") : QColor("#002144");
     }
 }
 

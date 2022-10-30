@@ -172,3 +172,7 @@ build*
 adond.*
 adond-new-gui.*
 /cov-int/
+
+# Not these files
+!/src/adond.cpp
+!/doc/man/adond.1
