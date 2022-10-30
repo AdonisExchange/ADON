@@ -65,7 +65,7 @@ ProposalInfo GovernanceModel::buildProposalInfo(const CBudgetProposal* prop, boo
             status = ProposalInfo::FINISHED;
         } else if (isPassing) {
             status = ProposalInfo::PASSING;
-        } else if (votesYes - votesNo > mnCount / 10) {
+        } else if (allocatedAmount + prop->GetAmount() > getMaxAvailableBudgetAmount() && votesYes - votesNo > mnCount / 10) {
             status = ProposalInfo::PASSING_NOT_FUNDED;
         } else {
             status = ProposalInfo::NOT_PASSING;
