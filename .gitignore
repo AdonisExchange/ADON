@@ -175,6 +175,8 @@ adond-new-gui.*
 src/chiabls/configure~
 src/chiabls/contrib/relic/include/relic_conf.h.old
 src/univalue/configure~
+contrib/seeds/nodes_test.txt
+contrib/seeds/nodes_main.txt
 
 # Not these files
 !/src/adond.cpp
