@@ -1855,12 +1855,6 @@ STAKING</translation>
         <translation>Jezik korisničkog sučelja možete postaviti ovdje. Postavke će stupiti na snagu nakon ponovnog pokretanja ADON novčanika.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</source>
-        <translation>Jezik nedostaje ili prijevod nije potpun? Pomozite s prijevodom ovdje:
-https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapiranje porta koristeći &amp;UPnP</translation>
     </message>

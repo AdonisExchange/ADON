@@ -1849,12 +1849,6 @@ STAKING</source>
         <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 ADON을 다시 시작한 후에 적용됩니다.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</source>
-        <translation>지원 언어가 없거나 번역이 불완전한가요? 번역을 도와주세요 :
-https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>&amp;UPnp를 사용하여 포트 매핑</translation>
     </message>
