@@ -456,7 +456,7 @@ public:
         pchMessageStart[1] = 0xe6;
         pchMessageStart[2] = 0xd5;
         pchMessageStart[3] = 0xca;
-        nDefaultPort = 51474;
+        nDefaultPort = 32148;
 
         // nodes with support for servicebits filtering should be at the top
         vSeeds.emplace_back("adon-testnet.seed.fuzzbawls.pw", true);
