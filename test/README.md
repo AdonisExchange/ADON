@@ -120,9 +120,6 @@ default:
   `test_framework.log` and no logs are output to the console.
 - when run directly, *all* logs are written to `test_framework.log` and INFO
   level and above are output to the console.
-- when run on Travis, no logs are output to the console. However, if a test
-  fails, the `test_framework.log` and adond `debug.log`s will all be dumped
-  to the console to help troubleshooting.
 
 To change the level of logs output to the console, use the `-l` command line
 argument.

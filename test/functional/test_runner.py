@@ -54,8 +54,6 @@ TEST_EXIT_PASSED = 0
 TEST_EXIT_SKIPPED = 77
 
 BASE_SCRIPTS= [
-    # Scripts that are run by the travis build process.
-
     # Longest test should go first, to favor running tests in parallel
     'wallet_basic.py',                          # ~ 498 sec
     'wallet_backup.py',                         # ~ 477 sec
@@ -187,7 +185,6 @@ SAPLING_SCRIPTS = [
 ]
 
 EXTENDED_SCRIPTS = [
-    # These tests are not run by the travis build process.
     # Longest test should go first, to favor running tests in parallel
     # vv Tests less than 20m vv
     'feature_dbcrash.py',
@@ -425,20 +422,10 @@ def run_tests(test_list, src_dir, build_dir, exeext, tmpdir, jobs=1, enable_cove
 
     if len(test_list) > 1 and jobs > 1:
         # Populate cache
-        # Send a ping message every 5 minutes to not get stalled on Travis.
         import threading
         pingTime = 5 * 60
         stopTimer = False
 
-        def pingTravis():
-            if stopTimer:
-                return
-            print("- Creating cache in progress...")
-            sys.stdout.flush()
-            threading.Timer(pingTime, pingTravis).start()
-
-        if keep_cache == "rewrite":
-            pingTravis()
         if keep_cache != "skip":
             try:
                 subprocess.check_output([tests_dir + 'create_cache.py'] + flags + ["--tmpdir=%s/cache" % tmpdir])
@@ -567,10 +554,6 @@ class TestHandler:
             time.sleep(.5)
             for j in self.jobs:
                 (name, time0, proc, testdir, log_out, log_err) = j
-                if os.getenv('TRAVIS') == 'true' and int(time.time() - time0) > 20 * 60:
-                    # In travis, timeout individual tests after 20 minutes (to stop tests hanging and not
-                    # providing useful output.
-                    proc.send_signal(signal.SIGINT)
                 if proc.poll() is not None:
                     log_out.seek(0), log_err.seek(0)
                     [stdout, stderr] = [l.read().decode('utf-8') for l in (log_out, log_err)]
@@ -643,9 +626,6 @@ def check_script_list(src_dir):
     missed_tests = list(python_files - set(map(lambda x: x.split()[0], ALL_SCRIPTS + NON_SCRIPTS)))
     if len(missed_tests) != 0:
         print("%sWARNING!%s The following scripts are not being run: %s. Check the test lists in test_runner.py." % (BOLD[1], BOLD[0], str(missed_tests)))
-        if os.getenv('TRAVIS') == 'true':
-            # On travis this warning is an error to prevent merging incomplete commits into master
-            sys.exit(1)
 
 class RPCCoverage():
     """
