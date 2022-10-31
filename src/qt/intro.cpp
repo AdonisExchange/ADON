@@ -23,7 +23,7 @@
 
 static const uint64_t GB_BYTES = 1000000000LL;
 /* Minimum free space (in GB) needed for mainnet data directory */
-static const uint64_t BLOCK_CHAIN_SIZE = 25;
+static const uint64_t BLOCK_CHAIN_SIZE = 5;
 /* Minimum free space (in GB) needed for testnet data directory */
 static const uint64_t TESTNET_BLOCK_CHAIN_SIZE = 1;
 /* Total required space (in GB) depending on network */
