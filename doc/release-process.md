@@ -5,7 +5,7 @@ Release Process
 
 ### Before every release candidate
 
-* Update translations (ping Fuzzbawls on Discord) see [translation_process.md](https://github.com/AdonisNetwork/ADON/blob/master/doc/translation_process.md#synchronising-translations).
+* See [translation_process.md](https://github.com/AdonisNetwork/ADON/blob/master/doc/translation_process.md#synchronising-translations).
 * Update manpages, see [gen-manpages.sh](https://github.com/AdonisNetwork/ADON/blob/master/contrib/devtools/README.md#gen-manpagessh).
 * Update release candidate version in `configure.ac` (`CLIENT_VERSION_RC`)
 

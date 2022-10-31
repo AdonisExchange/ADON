@@ -19,7 +19,7 @@ ADON is an open source community-driven cryptocurrency, focused on five main asp
 
 (5) Ease of Use: ADON is determined to offer the best possible graphical interface for a core node/wallet. A full featured graphical product for new and advanced users.
 
-A lot more information and specs at [adon.adonis.network](https://adon.adonis.network/). Join the community at [ADON Discord](https://discordapp.com/invite/jzqVsJd).
+A lot more information and specs at [adon.adonis.network](https://adon.adonis.network/). Join the community at [ADON Discord](https://discord.adonis.network).
 
 ## License
 ADON Core is released under the terms of the MIT license. See [COPYING](https://github.com/AdonisNetwork/ADON/blob/master/COPYING) for more information or see https://opensource.org/licenses/MIT.
