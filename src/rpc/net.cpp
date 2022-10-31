@@ -213,7 +213,7 @@ UniValue addnode(const JSONRPCRequest& request)
             "2. \"command\"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once\n"
 
             "\nExamples:\n" +
-            HelpExampleCli("addnode", "\"192.168.0.6:51472\" \"onetry\"") + HelpExampleRpc("addnode", "\"192.168.0.6:51472\", \"onetry\""));
+            HelpExampleCli("addnode", "\"192.168.0.6:31148\" \"onetry\"") + HelpExampleRpc("addnode", "\"192.168.0.6:31148\", \"onetry\""));
 
     if(!g_connman)
         throw JSONRPCError(RPC_CLIENT_P2P_DISABLED, "Error: Peer-to-peer functionality missing or disabled");
@@ -281,7 +281,7 @@ UniValue getaddednodeinfo(const JSONRPCRequest& request)
             "    \"connected\" : true|false,          (boolean) If connected\n"
             "    \"addresses\" : [                    (list of objects) Only when connected = true\n"
             "       {\n"
-            "         \"address\" : \"192.168.0.201:51472\",  (string) The adon server IP and port we're connected to\n"
+            "         \"address\" : \"192.168.0.201:31148\",  (string) The adon server IP and port we're connected to\n"
             "         \"connected\" : \"outbound\"           (string) connection, inbound or outbound\n"
             "       }\n"
             "     ]\n"
@@ -652,8 +652,8 @@ static UniValue addpeeraddress(const JSONRPCRequest& request)
             "}\n"
 
             "\nExamples:\n"
-            + HelpExampleCli("addpeeraddress", "\"1.2.3.4\" 51472")
-            + HelpExampleRpc("addpeeraddress", "\"1.2.3.4\", 51472"));
+            + HelpExampleCli("addpeeraddress", "\"1.2.3.4\" 31148")
+            + HelpExampleRpc("addpeeraddress", "\"1.2.3.4\", 31148"));
     }
     if (!g_connman) {
         throw JSONRPCError(RPC_CLIENT_P2P_DISABLED, "Error: Peer-to-peer functionality missing or disabled");
