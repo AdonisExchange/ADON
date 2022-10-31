@@ -96,7 +96,7 @@ MasterNodeWizardDialog::MasterNodeWizardDialog(WalletModel* model, MNModel* _mnM
     ui->stackedWidget->setCurrentIndex(pos);
     ui->lineEditPort->setEnabled(false);    // use default port number
     if (walletModel->isRegTestNetwork()) {
-        ui->lineEditPort->setText("51476");
+        ui->lineEditPort->setText("33148");
     } else if (walletModel->isTestNetwork()) {
         ui->lineEditPort->setText("32148");
     } else {
