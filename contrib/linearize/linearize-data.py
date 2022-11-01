@@ -291,7 +291,7 @@ if __name__ == '__main__':
 	blkindex = get_block_hashes(settings)
 	blkmap = mkblockmap(blkindex)
 
-	if not "0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818" in blkmap:
+	if not "000005f3a67e71f112fae5e5ffc72c4976e5c6f603925950f48e4906e8687a23" in blkmap:
 		print("not found")
 	else:
 		BlockDataCopier(settings, blkindex, blkmap).run()
