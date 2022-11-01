@@ -8,7 +8,8 @@
 ///
 /// \copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 /// \license    This project is released under the MIT license.
-// Copyright (c) 2017-2022 The ADON developers
+// Copyright (c) 2017-2021 The PIVX developers
+// Copyright (c) 2022 The ADON developers
 
 #include "ParamGeneration.h"
 #include <string>

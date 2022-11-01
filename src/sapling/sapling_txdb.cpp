@@ -1,4 +1,5 @@
-// Copyright (c) 2016-2022 The ADON developers
+// Copyright (c) 2016-2021 The PIVX developers
+// Copyright (c) 2022 The ADON developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

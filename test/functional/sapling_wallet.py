@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2018 The Zcash developers
-# Copyright (c) 2020-2022 The ADON developers
+# Copyright (c) 2020-2021 The PIVX developers
+# Copyright (c) 2022 The ADON developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 

@@ -1,5 +1,6 @@
 // Copyright (c) 2018-2020 The ZCash developers
-// Copyright (c) 2021-2022 The ADON developers
+// Copyright (c) 2021-2021 The PIVX developers
+// Copyright (c) 2022 The ADON developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
