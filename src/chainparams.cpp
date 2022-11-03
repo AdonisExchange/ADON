@@ -209,7 +209,7 @@ public:
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMaxMoneyOut = 21000000 * COIN;
         consensus.nMNCollateralAmt = 100000 * COIN;
-        consensus.nMNBlockReward = 3 * COIN;
+        consensus.nMNBlockReward = 0.1 * COIN;
         consensus.nMNCollateralMinConf = 15;
         consensus.nProposalEstablishmentTime = 60 * 60 * 24;    // must be at least a day old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
@@ -363,7 +363,7 @@ public:
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMaxMoneyOut = 21000000 * COIN;
         consensus.nMNCollateralAmt = 100000 * COIN;
-        consensus.nMNBlockReward = 3 * COIN;
+        consensus.nMNBlockReward = 0.1 * COIN;
         consensus.nMNCollateralMinConf = 15;
         consensus.nProposalEstablishmentTime = 60 * 5;  // at least 5 min old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
@@ -503,7 +503,7 @@ public:
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMaxMoneyOut = 43199500 * COIN;
         consensus.nMNCollateralAmt = 100 * COIN;
-        consensus.nMNBlockReward = 3 * COIN;
+        consensus.nMNBlockReward = 0.1 * COIN;
         consensus.nMNCollateralMinConf = 1;
         consensus.nProposalEstablishmentTime = 60 * 5;  // at least 5 min old to make it into a budget
         consensus.nStakeMinAge = 0;
