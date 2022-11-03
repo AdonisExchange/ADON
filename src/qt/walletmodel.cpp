@@ -1027,7 +1027,7 @@ QString WalletModel::getSaplingAddressString(const CWalletTx* wtx, const Sapling
     return ret.left(18) + "..." + ret.right(18);
 }
 
-// returns a COutPoint of 10000 ADON if found
+// returns a COutPoint of 100000 ADON if found
 bool WalletModel::getMNCollateralCandidate(COutPoint& outPoint)
 {
     CWallet::AvailableCoinsFilter coinsFilter;

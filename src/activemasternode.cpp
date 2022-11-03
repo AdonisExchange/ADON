@@ -302,7 +302,7 @@ OperationResult initMasternode(const std::string& _strMasterNodePrivKey, const s
 }
 
 //
-// Bootup the Masternode, look for a 10000 ADON input and register on the network
+// Bootup the Masternode, look for a 100000 ADON input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {

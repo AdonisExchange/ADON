@@ -851,7 +851,7 @@ public:
      */
     std::map<libzcash::SaplingPaymentAddress, std::vector<SaplingNoteEntry>> ListNotes() const;
 
-    /// Get 10000 ADON output and keys which can be used for the Masternode
+    /// Get 100000 ADON output and keys which can be used for the Masternode
     bool GetMasternodeVinAndKeys(CPubKey& pubKeyRet,
                                  CKey& keyRet,
                                  const COutPoint& collateralOut,
