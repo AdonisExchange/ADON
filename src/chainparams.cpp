@@ -219,6 +219,7 @@ public:
         consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 6;
+        consensus.nLastBigReward = 1000;
 
         // spork keys
         consensus.strSporkPubKey = "043f94531fb29eadb0a39cf4a3c1932ac17a424c89ad9607824be3e81aa13787caae7d3d4add8e0bad8218f3a1f35afe7c99b19853cd4b30b8ab2ca5ce114be8ee";
