@@ -102,43 +102,6 @@ BOOST_AUTO_TEST_CASE(block_signature_test)
     }
 }
 
-CAmount nMoneySupplyPoWEnd = 43199500 * COIN;
-
-BOOST_AUTO_TEST_CASE(subsidy_limit_test)
-{
-    CAmount nSum = 0;
-    for (int nHeight = 0; nHeight < 1; nHeight += 1) {
-        /* premine in block 1 (60,001 ADON) */
-        CAmount nSubsidy = GetBlockValue(nHeight + 1);
-        BOOST_CHECK(nSubsidy <= 60001 * COIN);
-        nSum += nSubsidy;
-    }
-
-    for (int nHeight = 1; nHeight < 86400; nHeight += 1) {
-        /* PoW Phase One */
-        CAmount nSubsidy = GetBlockValue(nHeight + 1);
-        BOOST_CHECK(nSubsidy <= 250 * COIN);
-        nSum += nSubsidy;
-    }
-
-    for (int nHeight = 86400; nHeight < 151200; nHeight += 1) {
-        /* PoW Phase Two */
-        CAmount nSubsidy = GetBlockValue(nHeight + 1);
-        BOOST_CHECK(nSubsidy <= 225 * COIN);
-        nSum += nSubsidy;
-    }
-
-    for (int nHeight = 151200; nHeight < 259200; nHeight += 1) {
-        /* PoW Phase Two */
-        CAmount nSubsidy = GetBlockValue(nHeight + 1);
-        BOOST_CHECK(nSubsidy <= 45 * COIN);
-        BOOST_CHECK(Params().GetConsensus().MoneyRange(nSubsidy));
-        nSum += nSubsidy;
-        BOOST_CHECK(nSum > 0 && nSum <= nMoneySupplyPoWEnd);
-    }
-    BOOST_CHECK(nSum == 4109975100000000ULL);
-}
-
 bool ReturnFalse() { return false; }
 bool ReturnTrue() { return true; }
 
