@@ -284,10 +284,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x90;
-        pchMessageStart[1] = 0xc4;
-        pchMessageStart[2] = 0xfd;
-        pchMessageStart[3] = 0xe9;
+        pchMessageStart[0] = 0xad;
+        pchMessageStart[1] = 0x20;
+        pchMessageStart[2] = 0xbe;
+        pchMessageStart[3] = 0xd1;
         nDefaultPort = 31148;
 
         // Note that of those with the service bits flag, most only support a subset of possible options
@@ -425,10 +425,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xf5;
-        pchMessageStart[1] = 0xe6;
-        pchMessageStart[2] = 0xd5;
-        pchMessageStart[3] = 0xca;
+        pchMessageStart[0] = 0xb6;
+        pchMessageStart[1] = 0xb1;
+        pchMessageStart[2] = 0xa9;
+        pchMessageStart[3] = 0xc1;
         nDefaultPort = 32148;
 
         // nodes with support for servicebits filtering should be at the top
@@ -571,10 +571,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xa1;
-        pchMessageStart[1] = 0xcf;
-        pchMessageStart[2] = 0x7e;
-        pchMessageStart[3] = 0xac;
+        pchMessageStart[0] = 0x25;
+        pchMessageStart[1] = 0x42;
+        pchMessageStart[2] = 0xa3;
+        pchMessageStart[3] = 0xc4;
         nDefaultPort = 33148;
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet adon addresses start with 'x' or 'y'
