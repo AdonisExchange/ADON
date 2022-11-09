@@ -6,8 +6,6 @@
 
 #include "test/test_adon.h"
 
-#include "test/data/sighash.json.h"
-
 #include "consensus/tx_verify.h"
 #include "serialize.h"
 #include "script/script.h"
