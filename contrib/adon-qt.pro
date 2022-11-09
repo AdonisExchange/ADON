@@ -310,7 +310,6 @@ HEADERS += src/activemasternode.h \
            src/test/data/script_valid.json.h \
            src/test/data/sig_canonical.json.h \
            src/test/data/sig_noncanonical.json.h \
-           src/test/data/sighash.json.h \
            src/test/data/tx_invalid.json.h \
            src/test/data/tx_valid.json.h \
            src/leveldb/helpers/memenv/memenv.h \

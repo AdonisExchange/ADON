@@ -51,7 +51,6 @@ JSON_TEST_FILES = \
   test/data/base58_keys_invalid.json \
   test/data/tx_invalid.json \
   test/data/tx_valid.json \
-  test/data/sighash.json \
   test/data/merkle_roots_sapling.json \
   test/data/merkle_serialization_sapling.json \
   test/data/merkle_witness_serialization_sapling.json \
@@ -176,7 +175,6 @@ BITCOIN_TESTS += \
   wallet/test/crypto_tests.cpp
 
 SAPLING_TESTS +=\
-  test/librust/sapling_rpc_wallet_tests.cpp \
   test/librust/sapling_wallet_tests.cpp \
   wallet/test/wallet_shielded_balances_tests.cpp \
   wallet/test/wallet_sapling_transactions_validations_tests.cpp \
