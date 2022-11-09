@@ -249,8 +249,8 @@ UniValue disconnectnode(const JSONRPCRequest& request)
             "1. \"node\"     (string, required) The node (see getpeerinfo for nodes)\n"
 
             "\nExamples:\n"
-            + HelpExampleCli("disconnectnode", "\"192.168.0.6:8333\"")
-            + HelpExampleRpc("disconnectnode", "\"192.168.0.6:8333\"")
+            + HelpExampleCli("disconnectnode", "\"192.168.0.6: 31148\"")
+            + HelpExampleRpc("disconnectnode", "\"192.168.0.6: 31148\"")
         );
 
     if(!g_connman)
