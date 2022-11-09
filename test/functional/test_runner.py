@@ -22,7 +22,6 @@ import logging
 import os
 import time
 import shutil
-import signal
 import sys
 import subprocess
 import tempfile
