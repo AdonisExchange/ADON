@@ -272,9 +272,8 @@ public:
         nDefaultPort = 31148;
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("adon.seed.fuzzbawls.pw", true);     // Primary DNS Seeder from Fuzzbawls
-        vSeeds.emplace_back("adon.seed2.fuzzbawls.pw", true);    // Secondary DNS Seeder from Fuzzbawls
-        vSeeds.emplace_back("adon-seed.furszy.net", true);     // Primary DNS Seeder from furszy
+        vSeeds.emplace_back("dnsseed1.adonis.center", true);
+        vSeeds.emplace_back("dnsseed2.adonis.center", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); //Start With "A"
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 78); // starting with 'Y'
@@ -401,8 +400,8 @@ public:
         nDefaultPort = 32148;
 
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("adon-testnet.seed.fuzzbawls.pw", true);
-        vSeeds.emplace_back("adon-testnet.seed2.fuzzbawls.pw", true);
+        vSeeds.emplace_back("dnsseedtest1.adonis.center", true);
+        vSeeds.emplace_back("dnsseedtest2.adonis.center", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 83); // Testnet adon addresses start with 'a'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 140);  // Testnet adon script addresses start with 'y'
