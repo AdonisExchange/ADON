@@ -25,4 +25,4 @@ std::string FormatStateMessage(const CValidationState& state)
     return state.GetRejectReason();
 }
 
-const std::string strMessageMagic = "DarkNet Signed Message:\n";
+const std::string strMessageMagic = "ADON Signed Message:\n";
