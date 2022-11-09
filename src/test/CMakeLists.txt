@@ -120,7 +120,6 @@ set(BITCOIN_TESTS
         ${CMAKE_CURRENT_SOURCE_DIR}/bloom_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/bls_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/checkblock_tests.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Checkpoints_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/coins_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/convertbits_tests.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/compress_tests.cpp

@@ -524,7 +524,6 @@ SOURCES += src/activemasternode.cpp \
            src/test/bip32_tests.cpp \
            src/test/bloom_tests.cpp \
            src/test/checkblock_tests.cpp \
-           src/test/Checkpoints_tests.cpp \
            src/test/coins_tests.cpp \
            src/test/compress_tests.cpp \
            src/test/crypto_tests.cpp \

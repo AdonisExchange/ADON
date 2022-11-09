@@ -102,7 +102,6 @@ BITCOIN_TESTS =\
   test/bls_tests.cpp \
   test/budget_tests.cpp \
   test/checkblock_tests.cpp \
-  test/Checkpoints_tests.cpp \
   test/coins_tests.cpp \
   test/convertbits_tests.cpp \
   test/compress_tests.cpp \
