@@ -62,10 +62,10 @@ apps:
     command: pivx-tx
     plugs: [home]
   test:
-    command: test_pivx
+    command: test_adon
     plugs: [home]
   testqt:
-    command: test_pivx-qt
+    command: test_adon-qt
     plugs: [home]
 
 layout:
