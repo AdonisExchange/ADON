@@ -1,8 +1,0 @@
-/usr/bin/adon-cli		--	gen_context(system_u:object_r:adon_exec_t,s0)
-/usr/sbin/adond		--	gen_context(system_u:object_r:adon_exec_t,s0)
-/usr/lib(64)?/adon/adond		--	gen_context(system_u:object_r:adon_exec_t,s0)
-
-/etc/adon(/.*)?		gen_context(system_u:object_r:adon_conf_t,s0)
-/var/lib/adon(/.*)?		gen_context(system_u:object_r:adon_var_lib_t,s0)
-
-(/var)?/run/adond(/.*)?   gen_context(system_u:object_r:adon_var_run_t,s0)
