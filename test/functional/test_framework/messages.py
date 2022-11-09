@@ -29,7 +29,7 @@ from .siphash import siphash256
 from .util import hex_str_to_bytes, bytes_to_hex_str
 
 MIN_VERSION_SUPPORTED = 60001
-MY_VERSION = 70925
+MY_VERSION = 70950
 MY_SUBVERSION = "/python-mininode-tester:0.0.3/"
 MY_RELAY = 1 # from version 70001 onwards, fRelay should be appended to version messages (BIP37)
 
@@ -1005,7 +1005,7 @@ class msg_version:
         else:
             self.nRelay = 0
 
-        if self.nVersion >= 70925:
+        if self.nVersion >= 70950:
             try:
                 self.mn_auth_challenge = deser_uint256(f)
             except:
