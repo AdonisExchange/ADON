@@ -1552,29 +1552,6 @@ bool AppInitMain()
                     assert(chainActive.Tip() != nullptr);
                 }
 
-                if (Params().NetworkIDString() == CBaseChainParams::MAIN) {
-                    // Prune zerocoin invalid outs if they were improperly stored in the coins database
-                    int chainHeight = chainActive.Height();
-                    bool fZerocoinActive = chainHeight > 0 && consensus.NetworkUpgradeActive(chainHeight, Consensus::UPGRADE_ZC);
-
-                    uiInterface.InitMessage(_("Loading/Pruning invalid outputs..."));
-                    if (fZerocoinActive) {
-                        if (!pcoinsTip->PruneInvalidEntries()) {
-                            strLoadError = _("System error while flushing the chainstate after pruning invalid entries. Possible corrupt database.");
-                            break;
-                        }
-                        MoneySupply.Update(pcoinsTip->GetTotalAmount(), chainHeight);
-                        // No need to keep the invalid outs in memory. Clear the map 100 blocks after the last invalid UTXO
-                        if (chainHeight > consensus.height_last_invalid_UTXO + 100) {
-                            invalid_out::setInvalidOutPoints.clear();
-                        }
-                    } else {
-                        // Populate list of invalid/fraudulent outpoints that are banned from the chain
-                        // They will not be added to coins view
-                        invalid_out::LoadOutpoints();
-                    }
-                }
-
                 if (!is_coinsview_empty) {
                     uiInterface.InitMessage(_("Verifying blocks..."));
                     CBlockIndex *tip = chainActive.Tip();

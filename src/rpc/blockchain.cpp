@@ -919,9 +919,6 @@ static UniValue SoftForkMajorityDesc(int version, const CBlockIndex* pindex, con
     case 3:
         idx = Consensus::BASE_NETWORK;
         break;
-    case 4:
-        idx = Consensus::UPGRADE_ZC;
-        break;
     case 5:
         idx = Consensus::UPGRADE_BIP65;
         break;

@@ -19,13 +19,10 @@ namespace libzerocoin {
     class CoinSpend;
 }
 
-// Fake Serial attack Range
-bool isBlockBetweenFakeSerialAttackRange(int nHeight);
 // Public coin spend
 bool CheckPublicCoinSpendEnforced(int blockHeight, bool isPublicSpend);
 bool ContextualCheckZerocoinTx(const CTransactionRef& tx, CValidationState& state, const Consensus::Params& consensus, int nHeight, bool isMined);
 bool ContextualCheckZerocoinSpend(const CTransaction& tx, const libzerocoin::CoinSpend* spend, int nHeight);
-bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const libzerocoin::CoinSpend* spend, int nHeight);
 
 bool IsSerialInBlockchain(const CBigNum& bnSerial, int& nHeightTx);
 

@@ -101,35 +101,16 @@ static bool CheckZerocoinSpend(const CTransactionRef _tx, CValidationState& stat
     return fValidated;
 }
 
-bool isBlockBetweenFakeSerialAttackRange(int nHeight)
-{
-    if (Params().NetworkIDString() != CBaseChainParams::MAIN)
-        return false;
-
-    return nHeight <= Params().GetConsensus().height_last_ZC_WrappedSerials;
-}
-
 bool CheckPublicCoinSpendEnforced(int blockHeight, bool isPublicSpend)
 {
-    if (Params().GetConsensus().NetworkUpgradeActive(blockHeight, Consensus::UPGRADE_ZC_PUBLIC)) {
-        // reject old coin spend
-        if (!isPublicSpend) {
-            return error("%s: failed to add block with older zc spend version", __func__);
-        }
-
-    } else {
-        if (isPublicSpend) {
-            return error("%s: failed to add block, public spend enforcement not activated", __func__);
-        }
-    }
-    return true;
+    return error("%s: failed to add block, public spend enforcement not activated", __func__);
 }
 
 bool ContextualCheckZerocoinTx(const CTransactionRef& tx, CValidationState& state, const Consensus::Params& consensus, int nHeight, bool isMined)
 {
     // zerocoin enforced via block time. First block with a zc mint is 863735
-    const bool fZerocoinEnforced = (nHeight >= consensus.ZC_HeightStart);
-    const bool fPublicSpendEnforced = consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC_PUBLIC);
+    const bool fZerocoinEnforced = false;
+    const bool fPublicSpendEnforced = false;
     const bool fRejectMintsAndPrivateSpends = !isMined || !fZerocoinEnforced || fPublicSpendEnforced;
     const bool fRejectPublicSpends = !isMined || !fPublicSpendEnforced || consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V5_0);
 
@@ -146,9 +127,6 @@ bool ContextualCheckZerocoinTx(const CTransactionRef& tx, CValidationState& stat
             if (!hasPrivateSpendInputs)
                 return state.DoS(100, error("%s: zerocoin spend tx %s has mixed spend inputs",
                                             __func__, txId), REJECT_INVALID, "bad-txns-zc-private-spend-mixed-types");
-            if (++nSpendCount > consensus.ZC_MaxSpendsPerTx)
-                return state.DoS(100, error("%s: zerocoin spend tx %s has more than %d inputs",
-                                            __func__, txId, consensus.ZC_MaxSpendsPerTx), REJECT_INVALID, "bad-txns-zc-private-spend-max-inputs");
 
         } else if (in.IsZerocoinPublicSpend()) {
             if (fRejectPublicSpends)
@@ -157,9 +135,6 @@ bool ContextualCheckZerocoinTx(const CTransactionRef& tx, CValidationState& stat
             if (!hasPublicSpendInputs)
                 return state.DoS(100, error("%s: zerocoin spend tx %s has mixed spend inputs",
                                             __func__, txId), REJECT_INVALID, "bad-txns-zc-public-spend-mixed-types");
-            if (++nSpendCount > consensus.ZC_MaxPublicSpendsPerTx)
-                return state.DoS(100, error("%s: zerocoin spend tx %s has more than %d inputs",
-                                            __func__, txId, consensus.ZC_MaxPublicSpendsPerTx), REJECT_INVALID, "bad-txns-zc-public-spend-max-inputs");
 
         } else {
             // this is a transparent input
@@ -212,58 +187,7 @@ bool IsSerialInBlockchain(const CBigNum& bnSerial, int& nHeightTx)
 
 bool ContextualCheckZerocoinSpend(const CTransaction& tx, const libzerocoin::CoinSpend* spend, int nHeight)
 {
-    if(!ContextualCheckZerocoinSpendNoSerialCheck(tx, spend, nHeight)){
-        return false;
-    }
-
-    //Reject serial's that are already in the blockchain
-    int nHeightTx = 0;
-    if (IsSerialInBlockchain(spend->getCoinSerialNumber(), nHeightTx))
-        return error("%s : zADON spend with serial %s is already in block %d\n", __func__,
-                     spend->getCoinSerialNumber().GetHex(), nHeightTx);
-
-    return true;
-}
-
-bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const libzerocoin::CoinSpend* spend, int nHeight)
-{
-    const Consensus::Params& consensus = Params().GetConsensus();
-    //Check to see if the zADON is properly signed
-    if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC_V2)) {
-        try {
-            if (!spend->HasValidSignature())
-                return error("%s: V2 zADON spend does not have a valid signature\n", __func__);
-        } catch (const libzerocoin::InvalidSerialException& e) {
-            // Check if we are in the range of the attack
-            if(!isBlockBetweenFakeSerialAttackRange(nHeight))
-                return error("%s: Invalid serial detected, txid %s, in block %d\n", __func__, tx.GetHash().GetHex(), nHeight);
-            else
-                LogPrintf("%s: Invalid serial detected within range in block %d\n", __func__, nHeight);
-        }
-
-        libzerocoin::SpendType expectedType = libzerocoin::SpendType::SPEND;
-        if (tx.IsCoinStake())
-            expectedType = libzerocoin::SpendType::STAKE;
-        if (spend->getSpendType() != expectedType) {
-            return error("%s: trying to spend zADON without the correct spend type. txid=%s\n", __func__,
-                         tx.GetHash().GetHex());
-        }
-    }
-
-    bool fUseV1Params = spend->getCoinVersion() < libzerocoin::PUBKEY_VERSION;
-
-    //Reject serial's that are not in the acceptable value range
-    if (!spend->HasValidSerial(consensus.Zerocoin_Params(fUseV1Params)))  {
-        // Up until this block our chain was not checking serials correctly..
-        if (!isBlockBetweenFakeSerialAttackRange(nHeight))
-            return error("%s : zADON spend with serial %s from tx %s is not in valid range\n", __func__,
-                     spend->getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
-        else
-            LogPrintf("%s:: HasValidSerial :: Invalid serial detected within range in block %d\n", __func__, nHeight);
-    }
-
-
-    return true;
+    return false;
 }
 
 bool ParseAndValidateZerocoinSpends(const Consensus::Params& consensus,

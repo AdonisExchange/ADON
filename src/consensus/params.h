@@ -27,10 +27,7 @@ enum UpgradeIndex : uint32_t {
     BASE_NETWORK,
     UPGRADE_POS,
     UPGRADE_POS_V2,
-    UPGRADE_ZC,
-    UPGRADE_ZC_V2,
     UPGRADE_BIP65,
-    UPGRADE_ZC_PUBLIC,
     UPGRADE_V3_4,
     UPGRADE_V4_0,
     UPGRADE_V5_0,
@@ -191,6 +188,7 @@ struct Params {
     int nTimeSlotLength;
     int nMaxProposalPayments;
     int nLastBigReward;
+    int ADON_TimeStart;
 
     // spork keys
     std::string strSporkPubKey;
@@ -199,9 +197,6 @@ struct Params {
     int64_t nTime_RejectOldSporkKey;
 
     // height-based activations
-    int height_last_invalid_UTXO;
-    int height_last_ZC_AccumCheckpoint;
-    int height_last_ZC_WrappedSerials;
 
     // Map with network updates
     NetworkUpgrade vUpgrades[MAX_NETWORK_UPGRADES];
@@ -243,13 +238,6 @@ struct Params {
      * (Legacy) Zerocoin consensus params
      */
     std::string ZC_Modulus;  // parsed in Zerocoin_Params (either as hex or dec string)
-    int ZC_MaxPublicSpendsPerTx;
-    int ZC_MaxSpendsPerTx;
-    int ZC_MinMintConfirmations;
-    CAmount ZC_MinMintFee;
-    int ZC_MinStakeDepth;
-    int ZC_TimeStart;
-    int ZC_HeightStart;
 
     libzerocoin::ZerocoinParams* Zerocoin_Params(bool useModulusV1) const
     {

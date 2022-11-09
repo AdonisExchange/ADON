@@ -12,7 +12,7 @@
 static bool HasStakeMinAgeOrDepth(int nHeight, uint32_t nTime, const CBlockIndex* pindex)
 {
     const Consensus::Params& consensus = Params().GetConsensus();
-    if (consensus.NetworkUpgradeActive(nHeight + 1, Consensus::UPGRADE_ZC_PUBLIC) &&
+    if (consensus.NetworkUpgradeActive(nHeight + 1, Consensus::UPGRADE_V5_3) &&
             !consensus.HasStakeMinAgeOrDepth(nHeight, nTime, pindex->nHeight, pindex->nTime)) {
         return error("%s : min age violation - height=%d - time=%d, nHeightBlockFrom=%d, nTimeBlockFrom=%d",
                      __func__, nHeight, nTime, pindex->nHeight, pindex->nTime);

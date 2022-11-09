@@ -12,6 +12,5 @@
 #include "validationinterface.h"
 
 bool DisconnectZerocoinTx(const CTransaction& tx);
-void CacheAccChecksum(const CBlockIndex* pindex, bool fWrite);
 
 #endif //VALIDATION_ZEROCOIN_LEGACY_H

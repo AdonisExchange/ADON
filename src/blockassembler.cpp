@@ -552,15 +552,13 @@ void IncrementExtraNonce(std::shared_ptr<CBlock>& pblock, int nHeight, unsigned 
 int32_t ComputeBlockVersion(const Consensus::Params& consensus, int nHeight)
 {
     if (NetworkUpgradeActive(nHeight, consensus, Consensus::UPGRADE_V5_0)) {
-        return CBlockHeader::CURRENT_VERSION;       // v11 (since 5.2.99)
+        return CBlockHeader::CURRENT_VERSION;
     } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V4_0)) {
         return 7;
     } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V3_4)) {
         return 6;
     } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_BIP65)) {
         return 5;
-    } else if (consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC)) {
-        return 4;
     } else {
         return 3;
     }

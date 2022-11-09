@@ -975,9 +975,7 @@ void static InvalidBlockFound(CBlockIndex* pindex, const CValidationState& state
 static bool SkipInvalidUTXOS(int nHeight)
 {
     const Consensus::Params& consensus = Params().GetConsensus();
-    return Params().NetworkIDString() == CBaseChainParams::MAIN &&
-           consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC) &&
-           nHeight <= consensus.height_last_invalid_UTXO;
+    return false;
 }
 
 void UpdateCoins(const CTransaction& tx, CCoinsViewCache& inputs, CTxUndo& txundo, int nHeight, bool fSkipInvalid)
@@ -1351,12 +1349,6 @@ DisconnectResult DisconnectBlock(CBlock& block, const CBlockIndex* pindex, CCoin
     view.SetBestBlock(pindex->pprev->GetBlockHash());
     evoDb->WriteBestBlock(pindex->pprev->GetBlockHash());
 
-    if (consensus.NetworkUpgradeActive(pindex->nHeight, Consensus::UPGRADE_ZC_V2) &&
-            pindex->nHeight <= consensus.height_last_ZC_AccumCheckpoint) {
-        // Legacy Zerocoin DB: If Accumulators Checkpoint is changed, remove changed checksums
-        CacheAccChecksum(pindex, false);
-    }
-
     return fClean ? DISCONNECT_OK : DISCONNECT_UNCLEAN;
 }
 
@@ -1674,26 +1666,6 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
     int64_t nTime4 = GetTimeMicros();
     nTimeIndex += nTime4 - nTime3;
     LogPrint(BCLog::BENCHMARK, "    - Index writing: %.2fms [%.2fs]\n", 0.001 * (nTime4 - nTime3), nTimeIndex * 0.000001);
-
-    if (consensus.NetworkUpgradeActive(pindex->nHeight, Consensus::UPGRADE_ZC_V2) &&
-            pindex->nHeight < consensus.height_last_ZC_AccumCheckpoint) {
-        // Legacy Zerocoin DB: If Accumulators Checkpoint is changed, cache the checksums
-        CacheAccChecksum(pindex, true);
-        // Clean coinspends cache every 50k blocks, so it does not grow unnecessarily
-        if (pindex->nHeight % 50000 == 0) {
-            ZADONModule::CleanCoinSpendsCache();
-        }
-    } else if (accumulatorCache && pindex->nHeight > consensus.height_last_ZC_AccumCheckpoint + 100) {
-        // 100 blocks After last Checkpoint block, wipe the checksum database and cache
-        accumulatorCache->Wipe();
-        accumulatorCache.reset();
-        ZADONModule::CleanCoinSpendsCache();
-    }
-
-    // 100 blocks after the last invalid out, clean the map contents
-    if (pindex->nHeight == consensus.height_last_invalid_UTXO + 100) {
-        invalid_out::setInvalidOutPoints.clear();
-    }
 
     return true;
 }
@@ -2770,7 +2742,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     for (const auto& tx : block.vtx) {
         nSigOps += GetLegacySigOpCount(*tx);
     }
-    unsigned int nMaxBlockSigOps = block.GetBlockTime() > Params().GetConsensus().ZC_TimeStart ? MAX_BLOCK_SIGOPS_CURRENT : MAX_BLOCK_SIGOPS_LEGACY;
+    unsigned int nMaxBlockSigOps = block.GetBlockTime() > Params().GetConsensus().ADON_TimeStart ? MAX_BLOCK_SIGOPS_CURRENT : MAX_BLOCK_SIGOPS_LEGACY;
     if (nSigOps > nMaxBlockSigOps)
         return state.DoS(100, error("%s : out-of-bounds SigOpCount", __func__),
             REJECT_INVALID, "bad-blk-sigops", true);
@@ -2891,7 +2863,6 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
     // Reject outdated version blocks
     if ((block.nVersion < 3 && nHeight >= 1) ||
-        (block.nVersion < 4 && consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC)) ||
         (block.nVersion < 5 && consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_BIP65)) ||
         (block.nVersion < 6 && consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V3_4)) ||
         (block.nVersion < 7 && consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V4_0)) ||
@@ -3027,8 +2998,8 @@ static bool CheckInBlockDoubleSpends(const CBlock& block, int nHeight, CValidati
 {
     const Consensus::Params& consensus = Params().GetConsensus();
     libzerocoin::ZerocoinParams* params = consensus.Zerocoin_Params(false);
-    const bool zadonActive = consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC);
-    const bool publicZadonActive = consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_ZC_PUBLIC);
+    const bool zadonActive = false;
+    const bool publicZadonActive = false;
     const bool v5Active = consensus.NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V5_0);
 
     // First collect the tx inputs, and check double spends
