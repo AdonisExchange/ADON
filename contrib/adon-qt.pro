@@ -515,7 +515,6 @@ SOURCES += src/activemasternode.cpp \
            src/script/sign.cpp \
            src/script/standard.cpp \
            src/test/accounting_tests.cpp \
-           src/test/alert_tests.cpp \
            src/test/allocator_tests.cpp \
            src/test/base32_tests.cpp \
            src/test/base58_tests.cpp \
