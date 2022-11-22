@@ -1,25 +1,22 @@
 ADON Core integration/staging repository
 =====================================
 
-[![master Actions Status](https://github.com/AdonisNetwork/ADON/workflows/CI%20Actions%20for%20ADON/badge.svg)](https://github.com/AdonisNetwork/ADON/actions)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/AdonisNetwork/ADON?color=%23002144&cacheSeconds=3600)](https://github.com/AdonisNetwork/ADON/releases)
 [![GitHub Release Date](https://img.shields.io/github/release-date/AdonisNetwork/ADON?color=%23002144&cacheSeconds=3600)](https://github.com/AdonisNetwork/ADON/releases)
 
 ## What is ADON?
 
-ADON is an open source community-driven cryptocurrency, focused on five main aspects:
+ADONIS Coin (ADON) is a decentralized, MIT-licensed open-source, fair-launch blockchain/cryptocurrency project managed, developed, governed, and stewarded by a community-driven decentralized autonomous organization (DAO). It has been designed, engineered, and tested using advanced cryptography protocols to provide, first and foremost, user Financial Data Protection.
 
-(1) User Data Protection: Through the use of SHIELD, a zk-SNARKs based privacy protocol.
+### Main aspects:
 
-(2) Low environmental footprint and network participation equality: Through the use of a highly developed Proof of Stake protocol.
+1. User Data Protection: Through the use of SHIELD, a zk-SNARKs based privacy protocol.
+2. Low environmental footprint and network participation equality: Through the use of a highly developed Proof of Stake protocol.
+3. Decentralized Governance System: A DAO built on top of the tier two Masternodes network, enabling a monthly community treasury, proposals submission and decentralized voting.
+4. Fast Transactions: Through the use of fast block times and the tier two network, ADON is committed to continue researching new and better instant transactions mechanisms.
+5. Ease of Use: ADON is determined to offer the best possible graphical interface for a core node/wallet. A full featured graphical product for new and advanced users.
 
-(3) Decentralized Governance System: A DAO built on top of the tier two Masternodes network, enabling a monthly community treasury, proposals submission and decentralized voting.
-
-(4) Fast Transactions: Through the use of fast block times and the tier two network, ADON is committed to continue researching new and better instant transactions mechanisms.
-
-(5) Ease of Use: ADON is determined to offer the best possible graphical interface for a core node/wallet. A full featured graphical product for new and advanced users.
-
-A lot more information and specs at [adon.adonis.network](https://adon.adonis.network/). Join the community at [ADON Discord](https://discord.adonis.network).
+A lot more information and specs at [adon.adonis.network](https://adon.adonis.network/). Join the community at [ADON Telegram]( https://t.me/adonisnetwork).
 
 ## License
 ADON Core is released under the terms of the MIT license. See [COPYING](https://github.com/AdonisNetwork/ADON/blob/master/COPYING) for more information or see https://opensource.org/licenses/MIT.
