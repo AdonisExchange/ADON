@@ -3130,7 +3130,7 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>Form</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation>1)ADON nedir?</translation>
     </message>
     <message>
@@ -3142,7 +3142,7 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation>ADON Nedir?</translation>
     </message>
     <message>

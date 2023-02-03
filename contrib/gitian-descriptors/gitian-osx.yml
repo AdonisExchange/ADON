@@ -29,7 +29,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/AdonisNetwork/ADON.git"
+- "url": "https://github.com/AdonisExchange/ADON.git"
   "dir": "adon"
 files:
 - "Xcode-11.3.1-11C505-extracted-SDK-with-libcxx-headers.tar.gz"

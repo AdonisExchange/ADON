@@ -3,7 +3,7 @@ ADON Core
 
 Setup
 ---------------------
-[ADON Core](http://adon.adonis.network/wallet) is the original ADON client and it builds the backbone of the network. However, it downloads and stores the entire history of ADON transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[ADON Core](http://adon.adonis.exchange/wallet) is the original ADON client and it builds the backbone of the network. However, it downloads and stores the entire history of ADON transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -28,10 +28,10 @@ Drag ADON-Qt to your applications folder, and then run ADON-Qt.
 
 ### Need Help?
 
-* See the documentation at the [ADON Wiki](https://docs.adonis.network/)
+* See the documentation at the [ADON Wiki](https://docs.adonis.exchange/)
 for help and more information.
-* Ask for help on the [ADON Forum](http://forum.adonis.network).
-* Join our Discord server [Discord Server](https://discord.adonis.network)
+* Ask for help on the [ADON Forum](http://forum.adonis.exchange).
+* Join our Discord server [Discord Server](https://discord.adonis.exchange)
 
 Building
 ---------------------
@@ -58,7 +58,7 @@ The ADON repo's [root README](/README.md) contains relevant information on the d
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [ADON](http://forum.adonis.network) forum.
+* Discuss on the [ADON](http://forum.adonis.exchange) forum.
 * Join the [ADON Discord](https://discord.adonis.network).
 
 ### Miscellaneous

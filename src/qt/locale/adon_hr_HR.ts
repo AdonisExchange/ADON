@@ -3948,7 +3948,7 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>Obrazac</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation>1) Što je ADON?</translation>
     </message>
     <message>
@@ -3956,15 +3956,15 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>2) Zašto se moji ADON ne mogu potrošiti?</translation>
     </message>
     <message>
-        <source>https://adon.adonis.network/</source>
-        <translation>https://adon.adonis.network/</translation>
+        <source>https://adon.adonis.exchange/</source>
+        <translation>https://adon.adonis.exchange/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation>Što je ADON?</translation>
     </message>
     <message>
@@ -4058,20 +4058,20 @@ vodjenje Masternode-ova za stvaranje i glasanje o prijedlozima.
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+                           &lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
                            #support in our Telegram&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+                           &lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 Imamo korisničku podršku u većini naših službenih chat grupa, na primjer
-&lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+&lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
 #support na Telegramu&lt;/a&gt;.
 Možete i podnijeti zahtjev, a to možete
-&lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+&lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
 na našoj Freshdesk stranici za podršku&lt;/a&gt;.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>

@@ -3785,7 +3785,7 @@ Il y a eu une erreur de sauvegarde de la liste d'adresses vers %1. SVP rééssay
         <translation>Formulaire</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation>1) Qu'est ce que ADON?</translation>
     </message>
     <message>
@@ -3793,15 +3793,15 @@ Il y a eu une erreur de sauvegarde de la liste d'adresses vers %1. SVP rééssay
         <translation>2) Pourquoi mes ADON ne peuvent pas être dépensés?</translation>
     </message>
     <message>
-        <source>https://adon.adonis.network/</source>
-        <translation>https://adon.adonis.network/</translation>
+        <source>https://adon.adonis.exchange/</source>
+        <translation>https://adon.adonis.exchange/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation>Qu'est ce que ADON ?</translation>
     </message>
     <message>
@@ -3864,20 +3864,20 @@ pour voir votre solde de monnaie dépensable sur le réseau.
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+                           &lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
                            #support in our Telegram&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+                           &lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+                           &lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
                            #support in our Telegram&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+                           &lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>

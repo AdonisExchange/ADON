@@ -1,12 +1,12 @@
 ADON Core integration/staging repository
 =====================================
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AdonisNetwork/ADON?color=%23002144&cacheSeconds=60)](https://github.com/AdonisNetwork/ADON/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/AdonisNetwork/ADON?color=%23002144&cacheSeconds=3600)](https://github.com/AdonisNetwork/ADON/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AdonisExchange/ADON?color=%23002144&cacheSeconds=60)](https://github.com/AdonisExchange/ADON/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/AdonisExchange/ADON?color=%23002144&cacheSeconds=3600)](https://github.com/AdonisExchange/ADON/releases)
 
-## What is ADON?
+## What is ADON VIP?
 
-ADONIS Coin (ADON) is a decentralized, MIT-licensed open-source, fair-launch blockchain/cryptocurrency project managed, developed, governed, and stewarded by a community-driven decentralized autonomous organization (DAO). It has been designed, engineered, and tested using advanced cryptography protocols to provide, first and foremost, user Financial Data Protection.
+ADONIS VIP Coin (ADON) is a decentralized, MIT-licensed open-source, fair-launch blockchain/cryptocurrency project managed, developed, governed, and stewarded by a community-driven decentralized autonomous organization (DAO). It has been designed, engineered, and tested using advanced cryptography protocols to provide, first and foremost, user Financial Data Protection.
 
 ### Main aspects:
 
@@ -16,16 +16,16 @@ ADONIS Coin (ADON) is a decentralized, MIT-licensed open-source, fair-launch blo
 4. Fast Transactions: Through the use of fast block times and the tier two network, ADON is committed to continue researching new and better instant transactions mechanisms.
 5. Ease of Use: ADON is determined to offer the best possible graphical interface for a core node/wallet. A full featured graphical product for new and advanced users.
 
-A lot more information and specs at [adon.adonis.network](https://adon.adonis.network/). Join the community at [ADON Telegram]( https://t.me/adonisnetwork).
+A lot more information and specs at [adon.adonis.exchange](https://adon.adonis.exchange/). Join the community at [ADON Telegram]( https://t.me/AdonisExchange).
 
 ## License
-ADON Core is released under the terms of the MIT license. See [COPYING](https://github.com/AdonisNetwork/ADON/blob/master/COPYING) for more information or see https://opensource.org/licenses/MIT.
+ADON Core is released under the terms of the MIT license. See [COPYING](https://github.com/AdonisExchange/ADON/blob/master/COPYING) for more information or see https://opensource.org/licenses/MIT.
 
 ## Development Process
 
-The master branch is regularly built (see doc/build-*.md for instructions) and tested, but it is not guaranteed to be completely stable. [Tags](https://github.com/AdonisNetwork/ADON/tags) are created regularly from release branches to indicate new official, stable release versions of ADON Core.
+The master branch is regularly built (see doc/build-*.md for instructions) and tested, but it is not guaranteed to be completely stable. [Tags](https://github.com/AdonisExchange/ADON/tags) are created regularly from release branches to indicate new official, stable release versions of ADON Core.
 
-The contribution workflow is described in [CONTRIBUTING.md](https://github.com/AdonisNetwork/ADON/blob/master/CONTRIBUTING.md) and useful hints for developers can be found in [doc/developer-notes.md](https://github.com/AdonisNetwork/ADON/blob/master/doc/developer-notes.md).
+The contribution workflow is described in [CONTRIBUTING.md](https://github.com/AdonisExchange/ADON/blob/master/CONTRIBUTING.md) and useful hints for developers can be found in [doc/developer-notes.md](https://github.com/AdonisExchange/ADON/blob/master/doc/developer-notes.md).
 
 ## Testing
 
@@ -33,7 +33,7 @@ Testing and code review is the bottleneck for development; we get more pull requ
 
 ## Automated Testing
 
-Developers are strongly encouraged to write [unit tests](https://github.com/AdonisNetwork/ADON/blob/master/src/test/README.md) for new code, and to submit new unit tests for old code. Unit tests can be compiled and run (assuming they weren't disabled in configure) with: make check. Further details on running and extending unit tests can be found in [/src/test/README.md](https://github.com/AdonisNetwork/ADON/blob/master/src/test/README.md).
+Developers are strongly encouraged to write [unit tests](https://github.com/AdonisExchange/ADON/blob/master/src/test/README.md) for new code, and to submit new unit tests for old code. Unit tests can be compiled and run (assuming they weren't disabled in configure) with: make check. Further details on running and extending unit tests can be found in [/src/test/README.md](https://github.com/AdonisExchange/ADON/blob/master/src/test/README.md).
 
 There are also regression and integration tests, written in Python. These tests can be run (if the test dependencies are installed) with: test/functional/test_runner.py`
 

@@ -1,6 +1,6 @@
 package=native_rust
 $(package)_version=1.54.0
-$(package)_download_path=https://depends.adonis.network
+$(package)_download_path=https://depends.adonis.exchange
 $(package)_file_name_x86_64_linux=rust-$($(package)_version)-x86_64-unknown-linux-gnu.tar.xz
 $(package)_sha256_hash_x86_64_linux=e1451b0d0c65d7d15ddc8a300714c8280bcda052a9cee10ef5bcb62b23640be2
 $(package)_file_name_arm_linux=rust-$($(package)_version)-arm-unknown-linux-gnueabihf.tar.xz

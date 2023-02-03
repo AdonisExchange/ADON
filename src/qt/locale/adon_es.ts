@@ -3787,7 +3787,7 @@ Ha habido un error al tratar de guardar la libreta de direcciones en %1. Por fav
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation>1) ¿Qué es ADON?</translation>
     </message>
     <message>
@@ -3795,15 +3795,15 @@ Ha habido un error al tratar de guardar la libreta de direcciones en %1. Por fav
         <translation>2) ¿Por qué mis ADON no se pueden gastar?</translation>
     </message>
     <message>
-        <source>https://adon.adonis.network/</source>
-        <translation>https://adon.adonis.network/</translation>
+        <source>https://adon.adonis.exchange/</source>
+        <translation>https://adon.adonis.exchange/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation>¿Qué es ADON?</translation>
     </message>
     <message>

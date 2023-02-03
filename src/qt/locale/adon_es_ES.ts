@@ -3612,7 +3612,7 @@ Ha habido un error al tratar de guardar la libreta de direcciones en %1. Por fav
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation>1) ¿Qué es ADON?</translation>
     </message>
     <message>
@@ -3624,7 +3624,7 @@ Ha habido un error al tratar de guardar la libreta de direcciones en %1. Por fav
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation>¿Qué es ADON?</translation>
     </message>
     <message>

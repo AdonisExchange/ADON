@@ -33,7 +33,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/AdonisNetwork/ADON.git"
+- "url": "https://github.com/AdonisExchange/ADON.git"
   "dir": "adon"
 files: []
 script: |

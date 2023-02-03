@@ -8,7 +8,7 @@ Transifex is setup to monitor the GitHub repo for updates, and when code contain
 
 Multiple language support is critical in assisting ADON's global adoption, and growth. One of ADON's greatest strengths is cross-border money transfers, any help making that easier is greatly appreciated.
 
-See the [Transifex ADON project](https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations/) to assist in translations.
+See the [Transifex ADON project](https://www.transifex.com/AdonisExchange/AdonisExchange-translations/) to assist in translations.
 
 ### Writing code with translations
 We use automated scripts to help extract translations in both Qt, and non-Qt source files. It is rarely necessary to manually edit the files in `src/qt/locale/`. The translation source files must adhere to the following format:
@@ -43,7 +43,7 @@ git commit
 ### Creating a Transifex account
 Visit the [Transifex Signup](https://www.transifex.com/signup/) page to create an account. Take note of your username and password, as they will be required to configure the command-line tool.
 
-You can find the ADON translation project at [https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations/](https://www.transifex.com/AdonisNetwork/AdonisNetwork-translations/).
+You can find the ADON translation project at [https://www.transifex.com/AdonisExchange/AdonisExchange-translations/](https://www.transifex.com/AdonisExchange/AdonisExchange-translations/).
 
 ### Installing the Transifex client command-line tool
 The client is used to fetch updated translations. If you are having problems, or need more details, see [https://docs.transifex.com/client/installing-the-client](https://docs.transifex.com/client/installing-the-client)

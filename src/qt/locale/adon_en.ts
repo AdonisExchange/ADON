@@ -4548,7 +4548,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     <name>SettingsFaqWidget</name>
     <message>
         <location filename="../adon/settings/forms/settingsfaqwidget.ui" line="+166"/>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4563,7 +4563,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+18"/>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

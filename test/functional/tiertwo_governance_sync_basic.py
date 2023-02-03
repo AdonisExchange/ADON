@@ -202,7 +202,7 @@ class MasternodeGovernanceBasicTest(AdonTier2TestFramework):
         self.log.info("preparing budget proposal..")
         firstProposal = Proposal(
             "super-cool",
-            "https://forum.adonis.network/test-proposal",
+            "https://forum.adonis.exchange/test-proposal",
             2,
             self.miner.getnewaddress(),
             300

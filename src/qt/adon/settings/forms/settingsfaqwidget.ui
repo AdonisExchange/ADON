@@ -163,7 +163,7 @@
                       <enum>Qt::NoFocus</enum>
                      </property>
                      <property name="text">
-                      <string>1) What is ADON?</string>
+                      <string>1) What is ADON VIP?</string>
                      </property>
                      <property name="checkable">
                       <bool>true</bool>
@@ -342,7 +342,7 @@
                   <enum>Qt::NoFocus</enum>
                  </property>
                  <property name="text">
-                  <string notr="true">https://adon.adonis.network</string>
+                  <string notr="true">https://adon.adonis.exchange</string>
                  </property>
                 </widget>
                </item>
@@ -495,7 +495,7 @@
                       <item>
                        <widget class="QLabel" name="labelSubtitle_Intro">
                         <property name="text">
-                         <string>What is ADON?</string>
+                         <string>What is ADON VIP?</string>
                         </property>
                         <property name="wordWrap">
                          <bool>true</bool>

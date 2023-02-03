@@ -8,7 +8,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/AdonisNetwork/ADON-detached-sigs.git"
+- "url": "https://github.com/AdonisExchange/ADON-detached-sigs.git"
   "dir": "signature"
 files:
 - "adon-osx-unsigned.tar.gz"

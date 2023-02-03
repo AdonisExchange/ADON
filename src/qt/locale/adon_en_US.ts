@@ -3959,24 +3959,24 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>Form</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
-        <translation>1) What is ADON?</translation>
+        <source>1) What is ADON VIP?</source>
+        <translation>1) What is ADON VIP?</translation>
     </message>
     <message>
         <source>2) Why are my ADON unspendable?</source>
         <translation>2) Why are my ADON unspendable?</translation>
     </message>
     <message>
-        <source>https://adon.adonis.network/</source>
-        <translation>https://adon.adonis.network/</translation>
+        <source>https://adon.adonis.exchange/</source>
+        <translation>https://adon.adonis.exchange/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
-        <translation>What is ADON?</translation>
+        <source>What is ADON VIP?</source>
+        <translation>What is ADON VIP?</translation>
     </message>
     <message>
         <source>2</source>
@@ -4068,20 +4068,20 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+                           &lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
                            #support in our Telegram&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+                           &lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+                           &lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
                            #support in our Telegram&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+                           &lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>

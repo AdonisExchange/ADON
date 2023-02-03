@@ -3675,7 +3675,7 @@ Wystąpił błąd podczas próby zapisania listy adresów w %1. Proszę spróbuj
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation>1) Co to jest ADON?</translation>
     </message>
     <message>
@@ -3683,15 +3683,15 @@ Wystąpił błąd podczas próby zapisania listy adresów w %1. Proszę spróbuj
         <translation>2) Dlaczego mojego ADON nie można wydać?</translation>
     </message>
     <message>
-        <source>https://adon.adonis.network/</source>
-        <translation>https://adon.adonis.network/</translation>
+        <source>https://adon.adonis.exchange/</source>
+        <translation>https://adon.adonis.exchange/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation>Co to jest ADON?</translation>
     </message>
     <message>

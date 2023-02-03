@@ -3939,7 +3939,7 @@ Es gab ein Problem bei dem Versuch die Adressen unter %1 zu speichern. Bitte ver
         <translation>Formular</translation>
     </message>
     <message>
-        <source>1) What is ADON?</source>
+        <source>1) What is ADON VIP?</source>
         <translation>1) Was ist ADON?</translation>
     </message>
     <message>
@@ -3947,15 +3947,15 @@ Es gab ein Problem bei dem Versuch die Adressen unter %1 zu speichern. Bitte ver
         <translation>2) Wieso kann ich meine ADON nicht ausgeben?</translation>
     </message>
     <message>
-        <source>https://adon.adonis.network/</source>
-        <translation>https://adon.adonis.network/</translation>
+        <source>https://adon.adonis.exchange/</source>
+        <translation>https://adon.adonis.exchange/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is ADON?</source>
+        <source>What is ADON VIP?</source>
         <translation>Was ist ADON</translation>
     </message>
     <message>
@@ -4034,20 +4034,20 @@ ADON nutzt einen Proof of Stake (PoS) Konsensalgorithmus, der es den Besitzern v
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+                           &lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
                            #support in our Telegram&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+                           &lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 Wir haben Support-Kanäle in den meisten unserer offiziellen Chatgruppen, z.B.
-&lt;a style='color: #ffdb45' href='https://t.me/adonisnetwork'&gt;
+&lt;a style='color: #ffdb45' href='https://t.me/AdonisExchange'&gt;
 #support in Telegram&lt;/a&gt;
 Wenn Sie bevorzugen, uns ein Ticket zu schicken, besuchen Sie
-&lt;a style='color: #ffdb45' href='https://adonis.network'&gt;
+&lt;a style='color: #ffdb45' href='https://adonis.exchange'&gt;
 unsere Support-Seite.&lt;/a&gt;
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>

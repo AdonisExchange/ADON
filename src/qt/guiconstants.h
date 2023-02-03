@@ -51,7 +51,7 @@ static const int MAX_URI_LENGTH = 255;
 
 
 #define QAPP_ORG_NAME "ADON"
-#define QAPP_ORG_DOMAIN "adon.adonis.network"
+#define QAPP_ORG_DOMAIN "adon.adonis.exchange"
 #define QAPP_APP_NAME_DEFAULT "ADON-Qt"
 #define QAPP_APP_NAME_TESTNET "ADON-Qt-testnet"
 
